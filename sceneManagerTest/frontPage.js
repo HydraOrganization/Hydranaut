@@ -7,7 +7,7 @@ function FrontPage()
     hy.addAnimation("normal", "images/hydra2.png");//add image to spritr
     var me = this;
 
-    hy.mouseActive=true;//activate hydram mouse click
+    hy.mouseActive=true;//activate hydra mouse click
 
 
 
