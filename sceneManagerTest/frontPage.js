@@ -1,54 +1,34 @@
-class Circle
-{
-    constructor(x, y, radius)
-    {
-      this.x = x;
-      this.y = y;
-      this.radius = radius;
-    }
-
-    display()
-    {
-      noStroke();
-      noFill();
-      ellipse(this.x, this.y, this.radius);
-    }
-
-    //CHECK IF CLICK WAS MADE INSIDE THE CIRCLE
-    clicked(x, y)
-    {
-      let d = dist(x, y, this.x, this.y);
-      if(d < this.radius)
-      {
-        return true;
-      }
-    }
-}
-
-//FRONT PAGE FUNCTION
+var hy;
 function FrontPage()
 {
-  circle = new Circle(hydra.width/2, hydra.height/2, 500);//create an invisible, clickable circle
+
+    //CREATE hydra sprite
+    hy = createSprite(window.displayWidth/2,window.displayHeight/4);
+    hy.addAnimation("normal", "images/hydra2.png");//add image to spritr
+    var me = this;
+
+    hy.mouseActive=true;//activate hydram mouse click
+
+
 
   this.draw = function()
   {
-    image(this.sceneManager.bkImage, 0, 0);//display the bg image
-    image(this.sceneManager.hydra, 0, 0);//display hydra image
-    circle.display();
+
+    background(51);//brackground color
+
+
     textSize(24);
     textAlign(CENTER);
     fill("black");
-    text("CLICK THE HYDRA", 400, 500);
+    text("Play Game", window.displayWidth/2,(window.displayHeight/4)+75,);
+
+        //checks to see if moused pressed was on hy
+      if(hy.mouseIsPressed)
+      {
+          console.log("inside if");
+          clear();//removes everything from the canvas
+          me.sceneManager.showScene(World1);//switch to world1
+      }
+      drawSprites();
   }
-
-  this.mousePressed = function()
-  {
-    if(circle.clicked(mouseX, mouseY))
-    {
-      clear();//removes everything from the canvas
-      this.sceneManager.showScene(World1);//switch to world1
-    }
-  }
-
-
 }
