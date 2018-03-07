@@ -26,30 +26,46 @@ class Circle
       }
     }
 }
+var existingPlayer;
+var newPlayer;
 
 //FRONT PAGE FUNCTION
 function FrontPage()
 {
-  circle = new Circle(hydra.width/2, hydra.height/2, 500);//create an invisible, clickable circle
+    newPlayer= createSprite((window.displayWidth/2)-100,window.displayHeight/2);
+    newPlayer.addAnimation("normal", "images/hydra2.png");//add image to spritr
+    newPlayer.mouseActive = true;
+    circle = new Circle(hydra.width/2, hydra.height/2, 500);//create an invisible, clickable circle
+  //
+    existingPlayer= createSprite((window.displayWidth/2+175),window.displayHeight/2);
+    existingPlayer.addAnimation("normal", "images/hydra2.png");//add image to spritr
+    existingPlayer.mouseActive = true;
 
   this.draw = function()
   {
-    image(this.sceneManager.bkImage, 0, 0);//display the bg image
-    image(this.sceneManager.hydra, 0, 0);//display hydra image
-    circle.display();
+      existingPlayer.visible = true;
+      newPlayer.visible = true;
+      image(this.sceneManager.planeBG, 0, 0, window.displayWidth, window.displayHeight);//display the board image
+   // circle.display();
     textSize(24);
     textAlign(CENTER);
     fill("black");
-    text("CLICK THE HYDRA", 400, 500);
-  }
-
-  this.mousePressed = function()
-  {
-    if(circle.clicked(mouseX, mouseY))
-    {
-      clear();//removes everything from the canvas
-      this.sceneManager.showScene(WorldsMap);//switch to worldsMap
+      text("Create Account", window.displayWidth/2-100,(window.displayHeight/2)+75);
+      text("Login", window.displayWidth/2+175,(window.displayHeight/2)+75);
+    if(newPlayer.mouseIsPressed) {
+        newPlayer.visible = false;
+        existingPlayer.visible = false;
+        clear();//removes everything from the canvas
+        this.sceneManager.showScene(LoginPage);//switch to worldsMap
     }
+    if(existingPlayer.mouseIsPressed)
+    {
+        newPlayer.visible = false;
+        existingPlayer.visible = false;
+          clear();//removes everything from the canvas
+        this.sceneManager.showScene(LoginPage);
+    }
+      drawSprites();
   }
 
 
