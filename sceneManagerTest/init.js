@@ -1,27 +1,34 @@
+let width;
+let height;
 var bkImage;
 var hydra;
-var board;
+var worldsMap;
+var worldMap1;
 
 function preload()
 {
+    width = windowWidth;
+    height = windowHeight;
     //load all images
-    bkImage = loadImage('images/indexBG.jpg');
-   hydra = loadAnimation('images/hydra2.png','images/hydra3.png')
-    //hydra = loadImage("images/hydra.png");
-    board = loadImage('images/spaceBG.png');
+    bkImage = loadImage("images/indexBG.jpg");
+    hydra = loadImage("images/hydra.png");
+    worldsMap = loadImage('images/worldsMap.png');
+    worldMap1 = loadImage('images/worldMap1.png');
 }
 
 function setup()
 {
-    createCanvas(window.displayWidth,window.displayHeight);
+    createCanvas(width, height);
 
     //CREATE THE SCENE MANAGER
     var mgr = new SceneManager();
 
     //LOAD ALL IMAGES INTO THE SCENE MANAGER
-    //mgr.bkImage = bkImage;
+    mgr.bkImage = bkImage;
     mgr.hydra = hydra;
-    mgr.board = board;
+    mgr.worldsMap = worldsMap;
+    mgr.worldMap1 = worldMap1;
+
 
     //DONT KNOW WHAT THIS DOES
     mgr.wire();
