@@ -19,7 +19,7 @@ class Circle
     //CHECK IF CLICK WAS MADE INSIDE THE CIRCLE
     clicked(x, y)
     {
-      let d = dist(x, y, this.x, this.y);
+      var d = dist(x, y, this.x, this.y);
       if(d < this.radius)
       {
         return true;
@@ -32,12 +32,12 @@ var newPlayer;
 //FRONT PAGE FUNCTION
 function FrontPage()
 {
-    newPlayer= createSprite((window.displayWidth/2)-100,window.displayHeight/2);
+    newPlayer= createSprite((windowWidth/2)-100,windowHeight/2);
     newPlayer.addAnimation("normal", "images/hydra2.png");//add image to spritr
     newPlayer.mouseActive = true;
     circle = new Circle(hydra.width/2, hydra.height/2, 500);//create an invisible, clickable circle
   //
-    existingPlayer= createSprite((window.displayWidth/2+175),window.displayHeight/2);
+    existingPlayer= createSprite((windowWidth/2+175),windowHeight/2);
     existingPlayer.addAnimation("normal", "images/hydra2.png");//add image to spritr
     existingPlayer.mouseActive = true;
 
@@ -45,13 +45,13 @@ function FrontPage()
   {
       existingPlayer.visible = true;
       newPlayer.visible = true;
-      image(this.sceneManager.planeBG, 0, 0, window.displayWidth, window.displayHeight);//display the board image
+      image(this.sceneManager.planeBG, 0, 0, windowWidth, windowHeight);//display the board image
    // circle.display();
     textSize(24);
     textAlign(CENTER);
     fill("black");
-      text("Create Account", window.displayWidth/2-100,(window.displayHeight/2)+75);
-      text("Login", window.displayWidth/2+175,(window.displayHeight/2)+75);
+      text("Create Account", windowWidth/2-100,(windowHeight/2)+75);
+      text("Login", windowWidth/2+175,(windowHeight/2)+75);
     if(newPlayer.mouseIsPressed) {
         newPlayer.visible = false;
         existingPlayer.visible = false;

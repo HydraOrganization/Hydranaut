@@ -1,5 +1,5 @@
-let width;
-let height;
+var width;
+var height;
 var bkImage;
 var hydra;
 var worldsMap;
@@ -9,8 +9,8 @@ var board;
 
 function preload()
 {
-    width = window.displayWidth
-    height = window.displayHeight;
+    width = windowWidth;
+    height = windowHeight;
     //load all images
     bkImage = loadImage("images/indexBG.jpg");
     hydra = loadImage("images/hydra.png");
@@ -23,7 +23,7 @@ function preload()
 function setup()
 {
     //createCanvas(width, height);
-    createCanvas(window.displayWidth,window.displayHeight);
+    createCanvas(windowWidth,windowHeight);
 
     //CREATE THE SCENE MANAGER
     var mgr = new SceneManager();
@@ -42,4 +42,7 @@ function setup()
 
     //SWITCH TO THE FRONT PAGE
     mgr.showScene(FrontPage);
+}
+function windowResized(){
+    resizeCanvas(windowWidth, windowHeight);
 }

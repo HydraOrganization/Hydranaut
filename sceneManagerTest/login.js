@@ -6,7 +6,7 @@ function LoginPage()
 {
     var me = this;
  // node = new Node(windowWidth/2, windowHeight/2 - 100, 300, 0);//create a invisible, clickable circle
-    loginSprite = createSprite((window.displayWidth/2),window.displayHeight/2);
+    loginSprite = createSprite((windowWidth/2),windowHeight/2);
     loginSprite.addAnimation("normal", "images/hydra2.png");//add image to spritr
 
 
@@ -16,12 +16,12 @@ function LoginPage()
   {
       background(51);
       loginSprite.visible =true;
-    image(this.sceneManager.planeBG, 0, 0, window.displayWidth, window.displayHeight);//display the board image
+    image(this.sceneManager.planeBG, 0, 0, windowWidth, windowHeight);//display the board image
     //node.display();
     textSize(24);
     textAlign(CENTER);
    // fill("yellow");
-    text("login", window.displayWidth/2, (window.displayHeight/2)+75);
+    text("login", windowWidth/2, (windowHeight/2)+75);
       if(loginSprite.mouseIsPressed)
       {
           loginSprite.visible = false;
