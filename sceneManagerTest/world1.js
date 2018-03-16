@@ -51,7 +51,7 @@ class Node{
 }
 
 var player,firstplayer;
-var map;
+//var map;
 var xpos , ypos;
 var playstate;
 var a;
@@ -80,7 +80,7 @@ function World1() {
     this.draw = function () {
         background(51);
         player.visible = true;
-        map = image(this.sceneManager.worldMap1, 0, 0, width, height);//display the board image
+         image(this.sceneManager.worldMap1, 0, 0, width, height);//display the board image
 
         checkoverlap();
         drawSprites();
