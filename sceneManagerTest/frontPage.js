@@ -32,38 +32,52 @@ var newPlayer;
 //FRONT PAGE FUNCTION
 function FrontPage()
 {
-    newPlayer= createSprite((windowWidth/2)-100,windowHeight/2);
+    var me = this;
+    newPlayer= createSprite((width/2)-100,height/2);
     newPlayer.addAnimation("normal", "images/hydra2.png");//add image to spritr
     newPlayer.mouseActive = true;
     circle = new Circle(hydra.width/2, hydra.height/2, 500);//create an invisible, clickable circle
   //
-    existingPlayer= createSprite((windowWidth/2+175),windowHeight/2);
+    existingPlayer= createSprite((width/2+175),height/2);
     existingPlayer.addAnimation("normal", "images/hydra2.png");//add image to spritr
     existingPlayer.mouseActive = true;
 
+    // newPlayer.onMousePressed = function(){
+    //     newPlayer.visible = false;
+    //     existingPlayer.visible = false;
+    //     clear();//removes everything from the canvas
+    //    // mouseIsPressed=false;
+    //     me.sceneManager.showScene(WorldPage);//switch to worldsMap
+    // }
+
   this.draw = function()
   {
+      background(51);
       existingPlayer.visible = true;
       newPlayer.visible = true;
-      image(this.sceneManager.planeBG, 0, 0, windowWidth, windowHeight);//display the board image
+
+      image(this.sceneManager.bkImage, 0, 0, width, height);//display the board image
    // circle.display();
     textSize(24);
     textAlign(CENTER);
     fill("black");
-      text("Create Account", windowWidth/2-100,(windowHeight/2)+75);
-      text("Login", windowWidth/2+175,(windowHeight/2)+75);
-    if(newPlayer.mouseIsPressed) {
+      text("Create Account", width/2-100,(height/2)+75);
+      text("Login", width/2+175,(height/2)+75);
+    if(newPlayer.mouseIsOver && mouseIsPressed) {
         newPlayer.visible = false;
         existingPlayer.visible = false;
         clear();//removes everything from the canvas
-        this.sceneManager.showScene(LoginPage);//switch to worldsMap
+        mouseIsPressed=false;
+        this.sceneManager.showScene(WorldPage);//switch to worldsMap
     }
-    if(existingPlayer.mouseIsPressed)
+   // if(existingPlayer.mouseIsPressed)
+      if(existingPlayer.mouseIsOver && mouseIsPressed)
     {
         newPlayer.visible = false;
         existingPlayer.visible = false;
           clear();//removes everything from the canvas
-        this.sceneManager.showScene(LoginPage);
+        mouseIsPressed=false;
+        this.sceneManager.showScene(WorldPage);
     }
       drawSprites();
   }

@@ -24,7 +24,7 @@ class Node{
     {
         this.x = x;
         this.y = y;
-        this.radius = radius;
+        //this.radius = radius;
         this.fill = 0;
         this.nodeNum = num;
 
@@ -50,70 +50,124 @@ class Node{
     }
 }
 
-var player;
+var player,firstplayer;
+var map;
+var xpos , ypos;
+var playstate;
+var a;
+var i;
 //WORLD1 FUNCTION
-function World1()
-{
-  var me = this;
-    //MAKE NODE
-    //Node(xPosition, yPosition, Radius, nodeNumber)
-    node0 = new Node(222, 439, 125, 0);
-    node1 = new Node(416, 412, 65, 1);
-    node2 = new Node(354, 293, 55, 2);
-    node3 = new Node(345, 209, 50, 3);
-    node4 = new Node(570, 311, 50, 4);
-    node5 = new Node(809, 423, 60, 5);
-    node6 = new Node(794, 300, 50, 6);
-    node7 = new Node(744, 204, 45, 7);
-    node8 = new Node(952, 255, 50, 8);
-    node9 = new Node(1158, 285, 55, 9);
-    node10 = new Node(1076, 138, 90, 10);
-
-    //NOde array stores all of the node objects
-    nodeArr = [node0, node1, node2, node3, node4, node5, node6, node7, node8, node9, node10];
-
-    //create playerPiece
-    player = createSprite(((windowWidth/4)+400),(windowHeight/4)+400);
-    player.addAnimation("normal", "images/playerPiece.png");//add image to sprite
-    //player.mouseActive=true;//activate booleanworld
+function World1() {
+    var me = this;
+    mouseIsPressed=false;
 
 
-    this.draw = function()
-    {
-      //
-        image(this.sceneManager.worldMap1, 0, 0, windowWidth, windowHeight);//display the board image
+
+    player = createSprite(200, 423);
+    player.addAnimation("normal", p1);
+    player.maxSpeed = 5;
+    player.scale = .5;
+    //set the location depth
+    //player.depth(1);
+    //activate sprite clickable
+    //player.mouseActive=true;
+
+    player.velocity.y = 0;
+    player.velocity.x = 0;
+
+    playstate = 0;
+
+    this.draw = function () {
+        background(51);
         player.visible = true;
-        //create nodes
-        for(var i = 0; i < nodeArr.length; i++)
-        {
-            nodeArr[i].display();
-        }
-        // if(player.mouseIsPressed)
-        // {
-        //
-        //     whileworld.visible = false;
-        //     clear();//removes everything from the canvas
-        //     me.sceneManager.showScene(FrontPage);//switch to world1
-        // }
+        map = image(this.sceneManager.worldMap1, 0, 0, width, height);//display the board image
+
+        checkoverlap();
         drawSprites();
+    }
+
+    this.mousePressed = function(){
+        if(playstate == 11){
+        playstate =0;
+        }
+        else
+        playstate++;
+        setxy();
+        console.log(` mouse x = ${mouseX}  y = ${mouseY} playstate = ${playstate}`);
+        movePlayer();
+
 
     }
 
-    this.mousePressed = function()
-    {
-        for(i = 0; i < nodeArr.length; i++)
+    function checkoverlap() {
+        if (player.overlapPoint(xpos, ypos))
         {
-
-            if(nodeArr[i].clicked(mouseX, mouseY))
-            {
-
-                console.log("Node # " + nodeArr[i].nodeNum);
-            }
-
-
+            console.log(`x = ${xpos} thispos = ${player.position.x} y = ${ypos} thisposy = ${player.position.y} playstate= ${playstate}`);
+            player.setVelocity(0, 0);
         }
+    }
 
+    function movePlayer()
+    {
+        player.attractionPoint(4, xpos, ypos);
+        console.log(`playstate = ${playstate}`);
+
+    }
+
+    function setxy()
+    {
+        switch(playstate){
+            case 0:
+                xpos = 200;
+                ypos = 423;
+                break;
+            case 1:
+                xpos = 250;
+                ypos = 330;
+                break;
+            case 2:
+                xpos = 290;
+                ypos = 229;
+                break;
+            case 3:
+                xpos = 338;
+                ypos = 137;
+                break;
+            case 4:
+                xpos = 599;
+                ypos = 155;
+                break;
+            case 5:
+                xpos = 579;
+                ypos = 263;
+                break;
+            case 6:
+                xpos = 570;
+                ypos = 395;
+                break;
+            case 7:
+                xpos = 905;
+                ypos = 375;
+                break;
+            case 8:
+                xpos = 860;
+                ypos = 225;
+                break;
+            case 9:
+                xpos = 837;
+                ypos = 130;
+                break;
+            case 10:
+                xpos = 960;
+                ypos = 125;
+                break;
+            default:
+                xpos = 200;
+                ypos = 423;
+                break;
+        }
 
     }
 
 }
+
