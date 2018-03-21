@@ -65,40 +65,45 @@ function World1() {
 
     player = createSprite(200, 423);
     player.addAnimation("normal", p1);
+    //set max speed for when sprite moves.
     player.maxSpeed = 5;
     player.scale = .5;
-    //set the location depth
-    //player.depth(1);
-    //activate sprite clickable
-    //player.mouseActive=true;
-
+    //set velocity to 0 to make sure its not moving.
     player.velocity.y = 0;
     player.velocity.x = 0;
 
     playstate = 0;
 
     this.draw = function () {
-        background(51);
-        player.visible = true;
-         image(this.sceneManager.worldMap1, 0, 0, width, height);//display the board image
 
+        background(51);
+        //make player visible for when moving
+        player.visible = true;
+        //back ground image.
+        image(this.sceneManager.worldMap1, 0, 0, width, height);//display the board image
+        //checks to see of player has reach x and y position
         checkoverlap();
+
         drawSprites();
     }
-
+    //if mouse pressed
     this.mousePressed = function(){
+        //if state is at last node reset it. (we can have this to move to next world)
         if(playstate == 11){
         playstate =0;
         }
+        //increase state
         else
         playstate++;
+        //set new x and y coordinates
         setxy();
-        console.log(` mouse x = ${mouseX}  y = ${mouseY} playstate = ${playstate}`);
+        //console.log(` mouse x = ${mouseX}  y = ${mouseY} playstate = ${playstate}`);
+        //set new attraction point for player to move to new x and y coordinates
         movePlayer();
 
 
     }
-
+    //checks to see if player has reached coordinates and set velocity to 0 so that it can stop moving.
     function checkoverlap() {
         if (player.overlapPoint(xpos, ypos))
         {
@@ -106,17 +111,18 @@ function World1() {
             player.setVelocity(0, 0);
         }
     }
-
+    //make player move to new attraction poing.
     function movePlayer()
     {
         player.attractionPoint(4, xpos, ypos);
         console.log(`playstate = ${playstate}`);
 
     }
-
+    //set x and y posing
     function setxy()
     {
         switch(playstate){
+            //case for player node position. 
             case 0:
                 xpos = 200;
                 ypos = 423;
