@@ -1,0 +1,33 @@
+#top-image {
+background:url('../images/spaceBG.png') -25px -50px;
+position:fixed ;
+top:0;
+width:100%;
+z-index: 0;
+  height:100%;
+  background-size: calc(100% + 50px);
+}
+ .worlds {
+   position: fixed;
+   z-index: 1;
+ }
+
+.container{
+  margin-top: -3%;
+}
+.col {
+  padding-top: 300px;
+}
+.row {
+  padding-left: 50px;
+}
+
+img {
+  padding-left: 50px;
+  padding-right: 150px;
+}
+
+ h1{
+  color: white;
+  z-index: 5;
+}
