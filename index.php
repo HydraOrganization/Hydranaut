@@ -1,7 +1,7 @@
 
 <?php
 	//connect to database
-	$connection = mysqli_connect('littlegrapher.ckslwoktsrzf.us-east-1.rds.amazonaws.com:3306','taskiiAdmin','bluesnowballUNT1','Taskii');
+	$connection = mysqli_connect('');
 
 
 ?>
