@@ -33,26 +33,21 @@ var newPlayer;
 function FrontPage()
 {
     var me = this;
+    //create icons for pages
     newPlayer= createSprite((width/2)-100,height/2);
     newPlayer.addAnimation("normal", "images/hydra2.png");//add image to spritr
     newPlayer.mouseActive = true;
     circle = new Circle(hydra.width/2, hydra.height/2, 500);//create an invisible, clickable circle
-  //
+
     existingPlayer= createSprite((width/2+175),height/2);
     existingPlayer.addAnimation("normal", "images/hydra2.png");//add image to spritr
     existingPlayer.mouseActive = true;
 
-    // newPlayer.onMousePressed = function(){
-    //     newPlayer.visible = false;
-    //     existingPlayer.visible = false;
-    //     clear();//removes everything from the canvas
-    //    // mouseIsPressed=false;
-    //     me.sceneManager.showScene(WorldPage);//switch to worldsMap
-    // }
 
   this.draw = function()
   {
       background(51);
+      //make icon visisble
       existingPlayer.visible = true;
       newPlayer.visible = true;
 

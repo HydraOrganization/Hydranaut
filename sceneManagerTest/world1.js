@@ -59,10 +59,8 @@ var i;
 //WORLD1 FUNCTION
 function World1() {
     var me = this;
+
     mouseIsPressed=false;
-
-
-
     player = createSprite(200, 423);
     player.addAnimation("normal", p1);
     //set max speed for when sprite moves.
@@ -122,7 +120,7 @@ function World1() {
     function setxy()
     {
         switch(playstate){
-            //case for player node position. 
+            //case for player node position.
             case 0:
                 xpos = 200;
                 ypos = 423;

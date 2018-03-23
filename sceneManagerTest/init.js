@@ -47,20 +47,20 @@ function preload()
 {
 
     //load all images
-    //worlds.js
-    planet1=loadAnimation("images/planet1.png");
-    planet2=loadAnimation("images/planet2.png");
-    planet3=loadAnimation("images/planet3.png");
-    planet4=loadAnimation("images/planet4.png");
     spaceShadows = loadImage('images/spaceShadows.png');
     bkImage = loadImage("images/indexBG.jpg");
     hydra = loadImage("images/hydra.png");
     worldsMap = loadImage('images/worldMap.png');
-   // worldsMap = loadImage('images/spaceShadow.jpg');
     worldMap1 = loadImage('images/terrain-w-nodes.png');
     player1Piece = loadImage('images/gamePiece.png');
+
+    //load all sprites images.
     p1 = loadAnimation('images/gamePiece.png');//load player piece (48x80)
-// /load player piece (434X720)
+    planet1=loadAnimation("images/planet1.png");
+    planet2=loadAnimation("images/planet2.png");
+    planet3=loadAnimation("images/planet3.png");
+    planet4=loadAnimation("images/planet4.png");
+
 }
 
 function setup()
@@ -73,7 +73,7 @@ function setup()
     //CREATE THE SCENE MANAGER
     var mgr = new SceneManager();
 
-    //LOAD ALL IMAGES INTO THE SCENE MANAGER
+    //LOAD ALL IMAGES AND SPRITES INTO THE SCENE MANAGER
     mgr.planet1=planet1;
     mgr.planet2=planet2;
     mgr.planet3=planet3;
