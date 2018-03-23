@@ -3,7 +3,7 @@
 <?php
 session_start();
 
-	$connection = mysqli_connect('server:port','user','pass','db');
+		$connection = mysqli_connect('');
 
 
 $user = $_POST['userInput'];
@@ -16,9 +16,9 @@ if (isset($_POST["submit"]))
          header("Location: /createAccount.php");
 
      } else {
+
      $query = "select * from UNT_Users where name = '$user'";
      $result = mysqli_query($connection,$query);
-
      if (mysqli_num_rows($result) == 1)
       {
 				?>
@@ -38,7 +38,7 @@ if (isset($_POST["submit"]))
       {
 				$query = "insert into UNT_Users(name, world, level) values('$user', 0, 0)";
 				mysqli_query($connection,$query);
-				header("location: /worldSelect.html?user=$user&world=0&level=0");
+				header("location: /worldSelect.html?user=$user&world=0");
       }
     }
 

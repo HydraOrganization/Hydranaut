@@ -29,7 +29,7 @@
 					</div>
 
 
-					<form action="php/authUserName.php" method="post">
+					<form action="php/authUser.php" method="post">
 
 					<span class="login100-form-title p-t-20 p-b-45">
 						Team Hydra

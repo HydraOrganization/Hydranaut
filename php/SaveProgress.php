@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-		$connection = mysqli_connect('connection variables');
+	$connection = mysqli_connect('littlegrapher.ckslwoktsrzf.us-east-1.rds.amazonaws.com:3306','taskiiAdmin','bluesnowballUNT1','Taskii');
 
 $name = $_GET['userName'];
 $world = $_GET['world'];
