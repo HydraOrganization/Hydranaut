@@ -3,7 +3,7 @@
 //WORLDS MAP FUNCTION
 function WorldsMap()
 {
-  circle = new Circle(418,597,200);
+  circle = new Node(373,535,180,0);
 
   this.draw = function()
   {
