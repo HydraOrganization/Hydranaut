@@ -5,6 +5,7 @@ var forworld;
 var whileworld;
 var shadow;
 var space;
+var choice;
 
 //var button;
 
@@ -15,6 +16,8 @@ function WorldPage()
     var check;
     var me = this;
 
+
+    this.enter = function(){
 
 
     //booleanworld sprite is the planet to be able to enlarge when mouse is active
@@ -54,7 +57,12 @@ function WorldPage()
     shadow=createSprite(width/2,height/2);
     shadow.addImage(spaceShadows);
     shadow.depth=2;
+        booleanworld.visible = true;
+        ifelseworld.visible = true;
+        forworld.visible = true;
+        whileworld.visible = true;
 
+    }
 
 
   this.draw = function()
@@ -63,10 +71,7 @@ function WorldPage()
 
       check = false;
       //make sprites visible
-      booleanworld.visible = true;
-      ifelseworld.visible = true;
-      forworld.visible = true;
-      whileworld.visible = true;
+
 
       //add background image
       image(this.sceneManager.worldsMap, 0, 0,width,height);//display the worldsMap image
@@ -90,90 +95,52 @@ function WorldPage()
           check =true;
           booleanworld.depth = 3;
           booleanworld.scale=1.5;
+          if(mouseIsPressed){
+              worldSelected(World1);
+          }
       }
       if(ifelseworld.mouseIsOver && check == false){
       check =true;
           ifelseworld.depth = 3;
           ifelseworld.scale= 1.5;
+          if(mouseIsPressed){
+              worldSelected(World2);
+          }
       }
       if(forworld.mouseIsOver && check == false){
       check =true;
           forworld.depth = 3;
           forworld.scale = 1.5;
+          if(mouseIsPressed){
+              worldSelected(World3);
+          }
       }
       if(whileworld.mouseIsOver && check == false){
       check =true;
           whileworld.depth=3;
           whileworld.scale=1.25;
+          if(mouseIsPressed){
+              worldSelected(World4);
+          }
       }
 
-      //mouse is pressed over sprite
-      if(booleanworld.mouseIsOver && mouseIsPressed)
-      {
-          //hide sprites
-          booleanworld.visible = false;
-          ifelseworld.visible = false;
-          forworld.visible = false;
-          whileworld.visible = false;
-          shadow.visible =false;
-          clear();//removes everything from the canvas
-          //switch to world1
-          me.sceneManager.showScene(World1);
-      }
-      //if(ifelseworld.mouseIsPressed)
-      if(ifelseworld.mouseIsOver && mouseIsPressed)
-      {
-          //hide sprites
-          booleanworld.visible = false;
-          ifelseworld.visible = false;
-          forworld.visible = false;
-          whileworld.visible = false;
-          shadow.visible =false;
-          clear();//removes everything from the canvas
-          //switch to world1(change when we create world2)
-          me.sceneManager.showScene(World2);
-          check = true;
-      }
-     // if(forworld.mouseIsPressed)
-      if(forworld.mouseIsOver && mouseIsPressed)
-      {
 
-          //hide sprites
-          booleanworld.visible = false;
-          ifelseworld.visible = false;
-          forworld.visible = false;
-          whileworld.visible = false;
-          shadow.visible =false;
-
-          clear();//removes everything from the canvas
-          //switch to world1 (change when world 3 is created
-          me.sceneManager.showScene(World3);
-      }
-      if(whileworld.mouseIsOver && mouseIsPressed)
-      {
-          //hide sprites
-          booleanworld.visible = false;
-          ifelseworld.visible = false;
-          forworld.visible = false;
-          whileworld.visible = false;
-          shadow.visible =false;
-
-          clear();//removes everything from the canvas
-          //switch to world1 (change when world 4 is created
-          me.sceneManager.showScene(World4);
-      }
       //drawsprites
       drawSprites();
 
   }
-    // function gotit(){
-    //         button.hide();
-    //         console.log("button clicked");
-    // }
-  // function hideButton(){
-  //     button.visible=false;
-  //     console.log("button clicked");
-  // }
+  function worldSelected(choice){
+      booleanworld.visible = false;
+      ifelseworld.visible = false;
+      forworld.visible = false;
+      whileworld.visible = false;
+      shadow.visible =false;
+
+      clear();//removes everything from the canvas
+      //switch to world1 (change when world 4 is created
+      me.sceneManager.showScene(choice);
+  }
+
 
 
 }

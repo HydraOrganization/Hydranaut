@@ -11,63 +11,16 @@ var buttonArray;
 
 function World1()
 {
-    var nodesLocation = [
-        [200,423],
-        [250,330],
-        [290,229],
-        [338,137],
-        [599,155],
-        [579,263],
-        [570,395],
-        [905,375],
-        [860,225],
-        [837,130],
-        [960,125]
-    ];
-
+    var nodesLocation = [];
     var me = this;
-    start = 0;
 
-    playstate=0;
-    mouseIsPressed=false;
-    player = createSprite(200, 423);
-    player.addAnimation("normal", p1);
-    //set max speed for when sprite moves.
-    player.maxSpeed = 5;
-    player.scale = .5;
-    //set velocity to 0 to make sure its not moving.
-    player.velocity.y = 0;
-    player.velocity.x = 0;
+    this.enter = function()
+    {
+        textSize(12);
+        textAlign(LEFT);
+        initGame();
+    }
 
-
-    dR=createSprite((width/2)-200,600);
-    dR.addAnimation("normal",dRed);
-    dR.scale=.3
-    dR.mouseActive=true;
-    dB=createSprite((width/2),600);
-    dB.addAnimation("normal",dBlue);
-    dB.scale=.3
-    dB.mouseActive=true;
-
-    dG=createSprite((width/2)+200,600);
-    dG.addAnimation("normal",dGreen);
-    dG.scale=.3
-    dG.mouseActive=true;
-    // puzzle = new Puzzle();
-
-    //var player = new Player(node0, player1Piece);
-    puzzle = new Puzzle(world1Questions);//gives the puzzle class the set of world questions
-    //var closeButton = new Button(puzzle.x + puzzle.width/2, puzzle.y + puzzle.height/9*8, "close");
-    buttonArray = [];
-    ans = 0;
-    xpos=nodesLocation[0][0];
-    ypos=nodesLocation[0][1];
-    player.visible=true;
-    //playstate = 0;
-    dR.visible = true;
-    dB.visible= true;
-    dG.visible = true;
-    console.log("beginning world 1");
 
     this.draw = function()
     {
@@ -115,6 +68,66 @@ function World1()
         mouseIsPressed=false;
         drawSprites();
     }
+    function initGame(){
+        nodesLocation = [
+            [200,423],
+            [250,330],
+            [290,229],
+            [338,137],
+            [599,155],
+            [579,263],
+            [570,395],
+            [905,375],
+            [860,225],
+            [837,130],
+            [960,125]
+        ];
+
+
+        start = 0;
+
+        playstate=0;
+        mouseIsPressed=false;
+        player = createSprite(200, 423);
+        player.addAnimation("normal", p1);
+        //set max speed for when sprite moves.
+        player.maxSpeed = 5;
+        player.scale = .5;
+        //set velocity to 0 to make sure its not moving.
+        player.velocity.y = 0;
+        player.velocity.x = 0;
+
+
+        dR=createSprite((width/2)-200,600);
+        dR.addAnimation("normal",dRed);
+        dR.scale=.3
+        dR.mouseActive=true;
+        dB=createSprite((width/2),600);
+        dB.addAnimation("normal",dBlue);
+        dB.scale=.3
+        dB.mouseActive=true;
+
+        dG=createSprite((width/2)+200,600);
+        dG.addAnimation("normal",dGreen);
+        dG.scale=.3
+        dG.mouseActive=true;
+        // puzzle = new Puzzle();
+
+        //var player = new Player(node0, player1Piece);
+        puzzle = new Puzzle(world1Questions);//gives the puzzle class the set of world questions
+        //var closeButton = new Button(puzzle.x + puzzle.width/2, puzzle.y + puzzle.height/9*8, "close");
+        buttonArray = [];
+        ans = 0;
+        xpos=nodesLocation[0][0];
+        ypos=nodesLocation[0][1];
+        player.visible=true;
+        //playstate = 0;
+        dR.visible = true;
+        dB.visible= true;
+        dG.visible = true;
+        console.log("beginning world 1");
+    }
+
     function Question(){
 
     }

@@ -3,7 +3,7 @@ var gameHeight;
 var bkImage;
 var hydra;
 var worldsMap;
-var worldMap1;
+var worldMap1,worldMap2,worldMap3,worldMap4;
 var player1Piece;//temp player token
 var nodeImageArr;
 var world1Questions;
@@ -282,6 +282,9 @@ function preload()
     hydra = loadImage('images/hydra.png');
     worldsMap = loadImage('images/worldsMap.png');
     worldMap1 = loadImage('images/World1.png');
+    worldMap2 = loadImage('images/World2.png');
+    worldMap3 = loadImage('images/World3.png');
+    worldMap4 = loadImage('images/World4.png');
     player1Piece = loadImage('images/gamePiece.png');//load player piece (434X720)
     spaceShadows = loadImage('images/spaceShadows.png');
     diamonds = loadImage('images/diamonds1.png');
@@ -322,6 +325,9 @@ function setup()
     mgr.hydra = hydra;
     mgr.worldsMap = worldsMap;
     mgr.worldMap1 = worldMap1;
+    mgr.worldMap2 = worldMap2;
+    mgr.worldMap3 = worldMap3;
+    mgr.worldMap4 = worldMap4;
     mgr.player1Piece = player1Piece;
 
     mgr.planet1=planet1;
