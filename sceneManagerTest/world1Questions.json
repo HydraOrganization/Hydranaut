@@ -1,0 +1,86 @@
+
+  [
+    {
+      "question": "Welcome to the Boolean World\nBoolean Algebra is algebra for binary \n 0 = false  \n 1 = true \nThe NOT means the opposite, the operator is written with a bar over the word, letter or number like this:\n _ \n 1 = 0\n _\n 1 = 0\n  ",
+      "tutorial1": "The NOT operator is written with a bar over the word, letter or numberlike this:\n _ \n a",
+      "optionNum": 0
+    },
+    {
+     "question": "Going on the space adventure requires that your spaceship is NOT broken. After an inspection of the ship you find that you ship’s rockets are not working. Will you be able to go on the space adventure?\n            ____\n Select the Blue Diamond",
+     "optionNum": 2,
+     "option1": "Yes",
+     "option2": "No",
+     "answer": "No"
+    },
+    {
+      "question": "You fix your spaceship and are ready to go. You plot a course to your destination and are ready to make to the jump to hyperspace. Before you can go, the course must NOT have any obstacles in the way. You review the course and find that it is free of obstacles. Can you make the jump to hyperspace?",
+      "optionNum": 2,
+      "option1": "Yes",
+      "option2": "No",
+      "answer": "Yes"
+    },
+    {
+      "question": "You make the jump, arrive at the planet, and are ready to land. To land, the spaceship must NOT be going too fast. The speed indicator shows that the ship is in the correct speed range. Are you ready to land?",
+      "optionNum": 2,
+      "option1": "Yes",
+      "option2": "No",
+      "answer": "Yes"
+    },
+    {
+      "question": "Your first mission is to explore planet landmarks. You are required to explore a mountain OR valley. You look around and decide to explore a cave. Have you satisfied the mission objective?",
+      "optionNum": 2,
+      "option1": "Yes",
+      "option2": "No",
+      "answer": "No"
+    },
+    {
+      "question": "After exploring a nearby mountain, the next objective is gather samples from the planet. You can gather either rock OR dirt samples to complete this objective",
+      "optionNum": 3,
+      "option1": "Rock",
+      "option2": "Liquid",
+      "option3": "Dirt",
+      "answer1": "Rock",
+      "answer2": "Dirt"
+    },
+    {
+      "question": "You need to gather more information about the planet. You can measure the planet’s temperature OR gravity OR atmosphere in order to satisfy the mission objective.",
+      "optionNum": 4,
+      "option1": "Temperature",
+      "option2": "Atmosphere",
+      "option3": "Gravity",
+      "option4": "Moons",
+      "answer1": "Temperature",
+      "answer2": "Gravity"
+    },
+    {
+      "question": "In order to travel to the next planet, you need to plot a course for the new planet AND ensure you spaceship engines are working properly. You plot a course in the ship’s computer but forget to check the the ship’s engines. Are you ready to move on to the next planet?",
+      "optionNum": 2,
+      "option1": "Yes",
+      "option2": "No",
+      "answer": "No"
+    },
+    {
+      "question": "Your ship also needs to refill life support supplies. You need air AND water to continue on your adventure. Gather the necessary supplies",
+      "optionNum": 3,
+      "option1": "Air",
+      "option2": "Dirt",
+      "option3": "Water",
+      "answer1": "Air",
+      "answer2": "Water"
+    },
+    {
+      "question": "Finally, the spaceship needs more Purple fuel crystals. In order to make more you need both Red AND Blue crystals. Choose the correct crystal pair to make your ship go.",
+      "optionNum": 4,
+      "option1": "Green",
+      "option2": "Red",
+      "option3": "Blue",
+      "option4": "Yellow",
+      "answer1": "Red",
+      "answer2": "Blue"
+    },
+    {
+      "question": "Leaving world",
+      "optionNum": 0
+    }
+
+  ]
