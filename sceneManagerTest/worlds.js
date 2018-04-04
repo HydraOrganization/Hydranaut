@@ -6,6 +6,7 @@ var whileworld;
 var shadow;
 var space;
 
+//var button;
 
 //WORLD1 FUNCTION
 function WorldPage()
@@ -13,6 +14,7 @@ function WorldPage()
     //var to if mouse is over
     var check;
     var me = this;
+
 
 
     //booleanworld sprite is the planet to be able to enlarge when mouse is active
@@ -53,8 +55,11 @@ function WorldPage()
     shadow.addImage(spaceShadows);
     shadow.depth=2;
 
+
+
   this.draw = function()
   {
+
 
       check = false;
       //make sprites visible
@@ -126,7 +131,7 @@ function WorldPage()
           shadow.visible =false;
           clear();//removes everything from the canvas
           //switch to world1(change when we create world2)
-          me.sceneManager.showScene(World1);
+          me.sceneManager.showScene(World2);
           check = true;
       }
      // if(forworld.mouseIsPressed)
@@ -142,7 +147,7 @@ function WorldPage()
 
           clear();//removes everything from the canvas
           //switch to world1 (change when world 3 is created
-          me.sceneManager.showScene(World1);
+          me.sceneManager.showScene(World3);
       }
       if(whileworld.mouseIsOver && mouseIsPressed)
       {
@@ -152,14 +157,23 @@ function WorldPage()
           forworld.visible = false;
           whileworld.visible = false;
           shadow.visible =false;
+
           clear();//removes everything from the canvas
           //switch to world1 (change when world 4 is created
-          me.sceneManager.showScene(World1);
+          me.sceneManager.showScene(World4);
       }
       //drawsprites
       drawSprites();
 
   }
+    // function gotit(){
+    //         button.hide();
+    //         console.log("button clicked");
+    // }
+  // function hideButton(){
+  //     button.visible=false;
+  //     console.log("button clicked");
+  // }
 
 
 }
