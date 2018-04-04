@@ -7,6 +7,7 @@ var i;
 var imgLoc;
 var dR,dB,dG,puzzle,ans,start;
 var buttonArray;
+var ask, questionState;
 
 
 function World1()
@@ -26,25 +27,12 @@ function World1()
     {
         //DISPLAY BOARD
         player.visible=true;
+        mouseIsPressed=false;
         image(this.sceneManager.worldMap1, 0, 0, width, height);
-        if(playstate == 11 ){
-            console.log("playstate = 11");
-            player.visible=false;
-            playstate = 0;
-            dR.visible = false;
-            dB.visible= false;
-            dG.visible = false;
-            console.log("finishedWorld "+playstate);
-            clear();//removes everything from the canvas
-            //switch to worlds
-            this.sceneManager.showScene(WorldPage)
-            //finishedWorld();
 
-        }
 
 
         if(dR.mouseIsOver && mouseIsPressed){
-        //if(dR.onMousePressed){
             console.log("dR mouse");
             dR.visible=false;
             ans = 3;
@@ -82,6 +70,7 @@ function World1()
 
 
         start = 0;
+        questionState = 0;
 
         playstate=0;
         mouseIsPressed=false;
@@ -108,9 +97,9 @@ function World1()
         dG.addAnimation("normal",dGreen);
         dG.scale=.3
         dG.mouseActive=true;
-        // puzzle = new Puzzle();
 
-        //var player = new Player(node0, player1Piece);
+
+
         puzzle = new Puzzle(world1Questions);//gives the puzzle class the set of world questions
         //var closeButton = new Button(puzzle.x + puzzle.width/2, puzzle.y + puzzle.height/9*8, "close");
         buttonArray = [];
@@ -131,38 +120,53 @@ function World1()
 
 
     this.mousePressed = function(){
-        console.log("inside mousepressed increase playstate");
-        // /if state is at last node reset it. (we can have this to move to next world)
-        // if(playstate == 11 ){
-        //     playstate=0;
-        //     //puzzle.visible = true;
-        // }
-        // else {
-
-        playstate++;
-
-        // }
-        //set new x and y coordinates
-        setxy();
-        //console.log(` mouse x = ${mouseX}  y = ${mouseY} playstate = ${playstate}`);
-        //set new attraction point for player to move to new x and y coordinates
-        movePlayer();
-
-
+        if(playstate == 11 )
+            finishedWorld();
+        else {
+            questionState++;
+            //set new x and y coordinates
+            setxy();
+            movePlayer();
+        }
     }
 
     //checks to see if player has reached coordinates and set velocity to 0 so that it can stop moving.
     function checkoverlap() {
         if (player.overlapPoint(xpos, ypos))
         {
-
+           ask = 0;
 
             player.setVelocity(0, 0);
             puzzle.visible = true;
             //DISPLAY BUTTON
             buttonArray = me.puzzleButtons(puzzle, world1Questions);
+            if(questionState == 0 || questionState == 1 || questionState == 5 || questionState == 8 || questionState == 11){
+                if(questionState < 3){ask= questionState+20;}
+                else if(questionState < 6) ask = 22;
+                else if(questionState < 9) ask = 23;
+                else ask = 24;
+            }
+            else if(questionState < 5){
+                playstate = questionState-1;
+                ask = playstate;
+                //console.log("inside mousepressed increase playstate");
+          //      playstate++;
+                console.log("inside mousepressed increase playstate"+ playstate);
+            }
+            else if(questionState < 8){
+                playstate=questionState-2;
+             ask = playstate;}
+            else if(questionState < 11){
+                playstate=questionState-3;
+                ask = playstate;
+            }
+            else{
+                playstate=questionState-4;
+             ask = playstate;
+            }
+            console.log("ask = "+ask);
 
-            puzzle.display(playstate);
+            puzzle.display(ask);
             if(buttonArray.length !== 0)
             {
                 for(i = 0; i < buttonArray.length; i++)
@@ -179,8 +183,6 @@ function World1()
     {
         player.attractionPoint(4, xpos, ypos);
 
-        // console.log(`playstate = ${playstate}`);
-
     }
     //set x and y posing
     function setxy()
@@ -190,17 +192,20 @@ function World1()
         ypos=nodesLocation[playstate][1];
 
     }
-    // function finishedWorld(){
-    //     player.visible=false;
-    //     dR.visible = false;
-    //     dB.visible= false;
-    //     dG.visible = false;
-    //     console.log("finishedWorld");
-    //     clear();//removes everything from the canvas
-    //     //switch to worlds
-    //     me.sceneManager.showScene(World1);
-    //
-    // }
+    function finishedWorld(){
+        mouseIsPressed=false;
+        player.visible=false;
+        playstate = 0;
+        dR.visible = false;
+        dB.visible= false;
+        dG.visible = false;
+        console.log("finishedWorld "+playstate);
+        clear();//removes everything from the canvas
+        //switch to worlds
+        me.sceneManager.showScene(WorldPage)
+
+    }
+
 
 
 

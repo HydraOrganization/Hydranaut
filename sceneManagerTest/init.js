@@ -110,26 +110,31 @@ class Puzzle
       stroke(0, 100, 150);
       strokeWeight(3);
       rect(this.x, this.y, this.width, this.height, this.radius);
-      // if(currentNode>1&&currentNode<5){
-      //     console.log("inside if init "+this.answered);
-      //    // do
-      //    //  {
-      //     questionNumber=int(random(1,5));
-      //     console.log("random = " + questionNumber);
-      //
-      //
-      //     currentNode=questionNumber;
-      //    // } while(this.questions[questionNumber].asked)
-      //     //this.answered = true;
-      //
-      // }
+        strokeWeight(0);
+        fill(255);
+        textSize(20);
+        textFont(fontRegular);
+      if(currentNode >19){
+          console.log("tutorial node "+currentNode);
+
+
+          text(this.questions[0].tutorial[currentNode-20], this.x + 10, this.y + 25, 700, 300);
+      }
+     else{
+         // console.log("inside else c");
+         // do
+         //  {
+        //  questionNumber=int(random(1,5));
+        //  console.log("random = " + questionNumber);
+
+
+          //currentNode=questionNumber;
+         // } while(this.questions[questionNumber].asked)
+          //this.answered = true;
+          text(this.questions[currentNode].question, this.x + 10, this.y + 25, 700, 300);
+      }
       //PUZZLE TEXT
-      strokeWeight(0);
-      fill(255);
-      textSize(20);
-      textFont(fontRegular);
-      text(this.questions[currentNode].question, this.x + 10, this.y + 25, 700, 300);
-      return(currentNode);
+     //return(currentNode);
     }
   }
 
