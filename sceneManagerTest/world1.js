@@ -34,15 +34,12 @@ function World1()
             dR.visible = false;
             dB.visible= false;
             dG.visible = false;
-            xpos=nodesLocation[0][0];
-            ypos=nodesLocation[0][1];
             console.log("finishedWorld "+playstate);
             clear();//removes everything from the canvas
             //switch to worlds
             this.sceneManager.showScene(WorldPage)
             //finishedWorld();
-            //playstate=0;
-            //puzzle.visible = true;
+
         }
 
 
@@ -134,14 +131,16 @@ function World1()
 
 
     this.mousePressed = function(){
-
+        console.log("inside mousepressed increase playstate");
         // /if state is at last node reset it. (we can have this to move to next world)
         // if(playstate == 11 ){
         //     playstate=0;
         //     //puzzle.visible = true;
         // }
         // else {
+
         playstate++;
+
         // }
         //set new x and y coordinates
         setxy();

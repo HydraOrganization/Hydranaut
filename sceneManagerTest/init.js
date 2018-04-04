@@ -110,19 +110,26 @@ class Puzzle
       stroke(0, 100, 150);
       strokeWeight(3);
       rect(this.x, this.y, this.width, this.height, this.radius);
-      if(currentNode>1&&currentNode<5 &&this.first==-1){
-          questionNumber=int(random(1,5));
-          
-          console.log("random = " + questionNumber);
-          this.first=1;
-
-      }
+      // if(currentNode>1&&currentNode<5){
+      //     console.log("inside if init "+this.answered);
+      //    // do
+      //    //  {
+      //     questionNumber=int(random(1,5));
+      //     console.log("random = " + questionNumber);
+      //
+      //
+      //     currentNode=questionNumber;
+      //    // } while(this.questions[questionNumber].asked)
+      //     //this.answered = true;
+      //
+      // }
       //PUZZLE TEXT
       strokeWeight(0);
       fill(255);
-      textSize(24);
+      textSize(20);
       textFont(fontRegular);
       text(this.questions[currentNode].question, this.x + 10, this.y + 25, 700, 300);
+      return(currentNode);
     }
   }
 
@@ -274,8 +281,8 @@ function preload()
 {
 
     //load font
-    fontRegular = loadFont('font/VT323-Regular.ttf');
-    //fontRegular = loadFont('font/OverpassMono-Regular.ttf');
+    //fontRegular = loadFont('font/VT323-Regular.ttf');
+    fontRegular = loadFont('font/OverpassMono-Regular.ttf');
     //fontRegular = loadFont('font/Combo-Regular.ttf');
     //load all images
     bkImage = loadImage('images/indexBG.jpg');
