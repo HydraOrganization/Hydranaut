@@ -1,32 +1,4 @@
 
-
-// class Circle
-// {
-//     constructor(x, y, radius)
-//     {
-//       this.x = x;
-//       this.y = y;
-//       this.radius = radius;
-//     }
-//
-//     display()
-//     {
-//       //noStroke();
-//       noFill();
-//       ellipse(this.x, this.y, this.radius);
-//     }
-//
-//     //CHECK IF CLICK WAS MADE INSIDE THE CIRCLE
-//     clicked(x, y)
-//     {
-//       let d = dist(x, y, this.x, this.y);
-//       if(d < this.radius)
-//       {
-//         return true;
-//       }
-//     }
-// }
-
 //FRONT PAGE FUNCTION
 function FrontPage()
 {
@@ -48,8 +20,8 @@ function FrontPage()
   {
     if(circle.clicked(mouseX, mouseY))
     {
-      mouseIsPressed=false;
       clear();//removes everything from the canvas
+        mouseIsPressed=false;
       this.sceneManager.showScene(WorldPage);//switch to worldsMap
     }
   }

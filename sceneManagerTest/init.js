@@ -13,6 +13,11 @@ var planet3;
 var planet4;
 var p1;
 var spaceShadows;
+var diamonds;
+var button;
+var dRed,dGreen,dOrange,dBlue,hRed,hBlue,fontRegular;
+var questionNumber;
+
 
 class Node
 {
@@ -44,37 +49,37 @@ class Node
 
 
 //PLAYER CLASS
-class Player
-{
-  constructor(currentNode, player1Piece)
-  {
-    this.x = currentNode.x - 15;
-    this.y = currentNode.y - 50;
-    this.width = 30;
-    this.height = 50;
-    this.piece = player1Piece;
-    this.currentNode = currentNode;
-  }
-
-  display()
-  {
-
-    image(this.piece,this.x, this.y, this.width, this.height);
-  }
-
-  move(targetNode)
-  {
-
-    this.currentNode = targetNode;
-    this.x = targetNode.x - 15;
-    this.y = targetNode.y - 50;
-    this.display();
-  }
-}
+// class Player
+// {
+//   constructor(currentNode, player1Piece)
+//   {
+//     this.x = currentNode.x - 15;
+//     this.y = currentNode.y - 50;
+//     this.width = 30;
+//     this.height = 50;
+//     this.piece = player1Piece;
+//     this.currentNode = currentNode;
+//   }
+//
+//   display()
+//   {
+//
+//     image(this.piece,this.x, this.y, this.width, this.height);
+//   }
+//
+//   move(targetNode)
+//   {
+//
+//     this.currentNode = targetNode;
+//     this.x = targetNode.x - 15;
+//     this.y = targetNode.y - 50;
+//     this.display();
+//   }
+// }
 
 class Puzzle
 {
-  constructor()
+  constructor(questions)
   {
     this.currentNode;
     this.x = width/4;
@@ -83,12 +88,9 @@ class Puzzle
     this.height = 300;
     this.radius = 20;
     this.visible = true;
-    this.buttonX = this.x + this.width/2;
-    this.buttonY = this.y + this.height/9*8;
-    this.buttonWidth = 80;
-    this.buttonHeight = 25;
-    this.buttonRadius = 5;
-
+    this.questions = questions;
+    this.answered = false;
+    this.first=-1;//has the question been answered correctly?
   }
 
   setPosition(targetNode)
@@ -96,63 +98,31 @@ class Puzzle
     this.currentNode = targetNode;
   }
 
-  display(state)
+  display(currentNode)
   {
-    //this.currentNode = currentNode;
+    this.currentNode = currentNode;
 
-      // this.x = width/4;
-      // this.y = height/4;
-      // this.width = 700;
-      // this.height = 300;
-      // this.radius = 20;
-      var vis = true;
-
-    if(vis)
+    if(this.visible)
     {
+
       //POP UP
       fill(10, 10, 10, 200);
       stroke(0, 100, 150);
       strokeWeight(3);
-      rect(width/4, height/4, 700, 300, 20);
+      rect(this.x, this.y, this.width, this.height, this.radius);
+      if(currentNode>1&&currentNode<5 &&this.first==-1){
+          questionNumber=int(random(1,5));
+          
+          console.log("random = " + questionNumber);
+          this.first=1;
 
+      }
       //PUZZLE TEXT
       strokeWeight(0);
       fill(255);
       textSize(24);
-      switch(state)
-      {
-        case 0:
-              text(world1Questions[0].welcome, (width/4) + 20, (height/4) + 25, 700, 300);
-              break;
-        case 1:
-              text(world1Questions[1].question, (width/4) + 20, (height/4) + 25, 700, 300);
-              break;
-        case 2:
-              text(world1Questions[2].question, (width/4) + 20, (height/4) + 25, 700, 300);
-              break;
-        case 3:
-              text(world1Questions[3].question, (width/4) + 20, (height/4) + 25, 700, 300);
-              break;
-
-      }
-
-
-
-      //BUTTON
-      this.buttonX = width/4 + 700/2;
-      this.buttonY = height/4 + 300/9*8;
-      this.buttonWidth = 80;
-      this.buttonHeight = 25;
-      this.buttonRadius = 5;
-      rectMode(CENTER);
-      rect(this.buttonX, this.buttonY, this.buttonWidth, this.buttonHeight, this.buttonRadius);
-
-      //BUTTON TEXT
-      strokeWeight(0);
-      fill(0, 100, 150)
-      textSize(24);
-      textAlign(CENTER);
-      text('close', this.buttonX, this.buttonY + 7);
+      textFont(fontRegular);
+      text(this.questions[currentNode].question, this.x + 10, this.y + 25, 700, 300);
     }
   }
 
@@ -162,11 +132,46 @@ class Puzzle
     this.visible = false;
   }
 
+}
+
+class Button
+{
+  constructor(x, y, width, str)
+  {
+    //BUTTON LOCATION
+    this.buttonX = x;
+    this.buttonY = y;
+
+    //BUTTON SIZE
+    this.buttonWidth = width/2*24 + 10;
+    this.buttonHeight = 30;
+    this.buttonRadius = 5;
+
+    //BUTTON TEXT
+    this.str = str;
+
+    //BUTTON VISIBILITY
+    this.visible = true;
+
+    //BUTTON SELECTED STATE
+    this.selected = false;
+  }
+
+  display()
+  {
+    if(this.visible)
+    {
+      //this.setButtonStyle();
+      this.setButtonStyle();
+      rect(this.buttonX, this.buttonY, this.buttonWidth, this.buttonHeight, this.buttonRadius);
+      this.setTextStyle();
+      text(this.str, this.buttonX, this.buttonY + 9);
+    }
+  }
+
   //CHECK IF CLICK WAS MADE INSIDE THE BUTTON
   clicked(x, y)
   {
-
-    //let r = dist(x, y, this.buttonX, this.buttonY);
     var dx = abs(x - this.buttonX);
     var dy = abs(y - this.buttonY);
     if(dx <= this.buttonWidth && dy <= this.buttonHeight)
@@ -175,6 +180,91 @@ class Puzzle
     }
   }
 
+  setButtonStyle()
+  {
+    if(this.selected)
+    {
+      fill(0, 100, 150);
+      stroke(0, 100, 150);
+      strokeWeight(3);
+      rectMode(CENTER);
+      //rect(this.buttonX, this.buttonY, this.buttonWidth, this.buttonHeight, this.buttonRadius);
+    }
+    else
+    {
+      fill(10, 10, 10, 200);
+      stroke(0, 100, 150);
+      strokeWeight(3);
+      rectMode(CENTER);
+      //rect(this.buttonX, this.buttonY, this.buttonWidth, this.buttonHeight, this.buttonRadius);
+    }
+  }
+
+  setTextStyle()
+  {
+    if(this.selected)
+    {
+      strokeWeight(0);
+      fill(10, 10, 10);
+      textSize(24);
+      textAlign(CENTER);
+      //text(this.str, this.buttonX, this.buttonY + 9);
+    }
+    else
+    {
+      strokeWeight(0);
+      fill(0, 100, 150);
+      textSize(24);
+      textAlign(CENTER);
+    //  text(this.str, this.buttonX, this.buttonY + 9);
+    }
+  }
+
+
+  //SETS THE STYLE OF THE BUTTON DEPENDING IN IF HAS BEEN SELECTED
+  //DRAWS THE BUTTON AND TEXT TO THE CANVAS
+  // setButtonStyle()
+  // {
+  //   if(this.selected)
+  //   {
+  //     print("selected");
+  //     fill(0, 100, 150);
+  //     stroke(0, 100, 150);
+  //     strokeWeight(3);
+  //     rectMode(CENTER);
+  //     rect(this.buttonX, this.buttonY, this.buttonWidth, this.buttonHeight, this.buttonRadius);
+  //
+  //     strokeWeight(0);
+  //     fill(10, 10, 10);
+  //     textSize(24);
+  //     textAlign(CENTER);
+  //     text(this.str, this.buttonX, this.buttonY + 9);
+  //   }
+  //   else
+  //   {
+  //     print("not selected");
+  //     fill(10, 10, 10, 200);
+  //     stroke(0, 100, 150);
+  //     strokeWeight(3);
+  //     rectMode(CENTER);
+  //     rect(this.buttonX, this.buttonY, this.buttonWidth, this.buttonHeight, this.buttonRadius);
+  //
+  //     strokeWeight(0);
+  //     fill(0, 100, 150);
+  //     textSize(24);
+  //     textAlign(CENTER);
+  //     text(this.str, this.buttonX, this.buttonY + 9);
+  //   }
+  //
+  // }
+
+
+
+  dismiss()
+  {
+    clear();
+    this.visible = false;
+  }
 
 }
 
@@ -183,13 +273,19 @@ class Puzzle
 function preload()
 {
 
+    //load font
+    fontRegular = loadFont('font/VT323-Regular.ttf');
+    //fontRegular = loadFont('font/OverpassMono-Regular.ttf');
+    //fontRegular = loadFont('font/Combo-Regular.ttf');
     //load all images
     bkImage = loadImage('images/indexBG.jpg');
     hydra = loadImage('images/hydra.png');
     worldsMap = loadImage('images/worldsMap.png');
-    worldMap1 = loadImage('images/full-world.png');
+    worldMap1 = loadImage('images/World1.png');
     player1Piece = loadImage('images/gamePiece.png');//load player piece (434X720)
     spaceShadows = loadImage('images/spaceShadows.png');
+    diamonds = loadImage('images/diamonds1.png');
+
 
 
     //load all sprites images.
@@ -199,7 +295,14 @@ function preload()
     planet3=loadAnimation("images/planet3.png");
     planet4=loadAnimation("images/planet4.png");
 
-    //LOAD QUESTIONS FROM JSON FILE
+    dRed=loadAnimation("images/DR2.png");
+    dGreen=loadAnimation("images/DG2.png");
+    dOrange==loadAnimation("images/DY2.png");
+    dBlue=loadAnimation("images/DB2.png");
+    hRed=loadAnimation("images/R1.png");
+    hBlue=loadAnimation("images/BH1.png");
+
+    //LOAD WORLD QUESTIONS FROM JSON FILE
     world1Questions = loadJSON("world1Questions.json");
 }
 
@@ -220,15 +323,23 @@ function setup()
     mgr.worldsMap = worldsMap;
     mgr.worldMap1 = worldMap1;
     mgr.player1Piece = player1Piece;
-    mgr.player1Piece = player1Piece;
+
     mgr.planet1=planet1;
     mgr.planet2=planet2;
     mgr.planet3=planet3;
     mgr.planet4=planet4;
 
-    mgr.spaceShadows=spaceShadows;
-    mgr.p1=p1;
+    mgr.dRed=dRed;
+    mgr.dGreen=dGreen;
+    mgr.dOrange=dOrange;
+    mgr.dBlue=dBlue;
+    mgr.hRed=hRed;
+    mgr.hBlue=hBlue;
 
+    mgr.spaceShadows=spaceShadows;
+    mgr.diamonds = diamonds;
+    mgr.p1=p1;
+    mgr.fontRegular=fontRegular;
 
     //DONT KNOW WHAT THIS DOES
     mgr.wire();
@@ -238,5 +349,5 @@ function setup()
 }
 
 function windowResized() {
-  centerCanvas();
+  // centerCanvas();
 }
