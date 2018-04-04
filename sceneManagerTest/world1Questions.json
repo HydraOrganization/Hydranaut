@@ -7,11 +7,6 @@
         ["def AND"],
         ["def OR"]
       ],
-
-      "tutorial1": "\nBoolean Algebra is used in Computer Programing and Digital Electronics. It is used to represent things as either true or false. \n 0 = false  \n 1 = true\nExample:\n TRUE(1): My shirt is white\nFALSE(0): My shirt is Not white\n. You must answer the question correct to pass by and collect Water, Air, and Food.",
-      "tutorial2:": "The NOT means the opposite, the operator is written with a bar over the word, letter, or number like this:\n _ \n 1 = 0\n _\n 1 = 0\n  ",
-      "tutorial3":"",
-      "tutorial4":"",
       "optionNum": 0
     },
     {
