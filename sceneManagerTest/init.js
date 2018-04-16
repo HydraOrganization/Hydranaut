@@ -11,11 +11,13 @@ var planet1;
 var planet2;
 var planet3;
 var planet4;
-var p1,p2,p3;
+var p1;
 var spaceShadows;
 var diamonds;
 var button, fontRegular;
-var dRed,dGreen,dOrange,dBlue,hRed,hBlue;
+var R1;
+
+
 
 
 class Node
@@ -462,12 +464,16 @@ function preload()
     planet3=loadAnimation("images/planet3.png");
     planet4=loadAnimation("images/planet4.png");
 
-    dRed=loadAnimation("images/DR2.png");
-    dGreen=loadAnimation("images/DG2.png");
-    dOrange==loadAnimation("images/DY2.png");
-    dBlue=loadAnimation("images/DB2.png");
-    hRed=loadAnimation("images/R1.png");
-    hBlue=loadAnimation("images/BH1.png");
+
+    R1=loadAnimation("images/ROCKIT-World1.png");
+    //rocket=loadAnimation("rocket1","images/ROCKIT-Wold1.png");
+    // rocket=loadAnimation("rocket2","images/ROCKIT-Wold2.png");
+    // rocket=loadAnimation("rocket3","images/ROCKIT-Wold3.png");
+    // dGreen=loadAnimation("images/DG2.png");
+    // dOrange==loadAnimation("images/DY2.png");
+    // dBlue=loadAnimation("images/DB2.png");
+    // hRed=loadAnimation("images/R1.png");
+    // hBlue=loadAnimation("images/BH1.png");
 
     //LOAD WORLD QUESTIONS FROM JSON FILE
     world1Questions = loadJSON("world1Questions.json");
@@ -497,12 +503,12 @@ function setup()
     mgr.planet3=planet3;
     mgr.planet4=planet4;
 
-    mgr.dRed=dRed;
-    mgr.dGreen=dGreen;
-    mgr.dOrange=dOrange;
-    mgr.dBlue=dBlue;
-    mgr.hRed=hRed;
-    mgr.hBlue=hBlue;
+    mgr.R1=R1;
+    // mgr.dGreen=dGreen;
+    // mgr.dOrange=dOrange;
+    // mgr.dBlue=dBlue;
+    // mgr.hRed=hRed;
+    // mgr.hBlue=hBlue;
 
     mgr.spaceShadows=spaceShadows;
     mgr.diamonds = diamonds;

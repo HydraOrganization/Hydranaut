@@ -16,6 +16,7 @@ function World1()
     var display;
     player = createSprite(200, 423);
     var me = this;
+    var rocket;
 
     //this is the first function that runs. it is needed when player comes back to this world it clear states.
     this.enter = function()
@@ -28,6 +29,7 @@ function World1()
     this.draw = function()
     {
         //DISPLAY BOARD
+        clear();
         image(this.sceneManager.worldMap1, 0, 0, width, height);
 
         incorrect = false;
@@ -35,6 +37,10 @@ function World1()
         checkoverlap();
         //check to see if mouse over button
         changeColor();
+        //check to see if rocket has launched
+        if(rocket.position.y < 0)
+            endGame();
+            //cloud.position.x = 0;
 
         mouseIsPressed=false;
         drawSprites();
@@ -78,8 +84,11 @@ function World1()
                 if(1 == puzzle.buttonArray.length){
                    // if player has finished
                     if(playstate == 15 ){
-                        endGame();
+                        console.log("MOVING ROCKET MOVING ROCKET MOVING ROCKET");
+                        moveRocket();
+                        //endGame();
                     }
+
 
                    else if(correct)
                         goToNextNode();//move player to next node
@@ -163,10 +172,19 @@ function World1()
         puzzle.initializeQuestion(nodesLocation[playstate][2]);
 
     }
+
+    function moveRocket(){
+        player.visible=false;
+        rocket.visible=true;
+        rocket.velocity.y = -2;
+    }
+
     //endGame takes you back to the world game. makes player invisible.
     function endGame(){
         player.visible=false;
+        rocket.visible=false;
         mouseIsPressed=false;
+        playstate = 0;
         clear();//removes everything from the canvas
         me.sceneManager.showScene(WorldPage);
     }
@@ -191,23 +209,31 @@ function World1()
             [960,130,11]
         ];
 
-        var me = this;
+        rocket = createSprite(960,130);
 
         correct=true;
 
         playstate=0;
+
+
         mouseIsPressed=false;
         player.visible=true;
+        rocket.visible = true;
 
 
         player.addAnimation("normal", p1);
+        rocket.addAnimation("rocket1", R1);
+        rocket.scale = .25;
         //set max speed for when sprite moves.
         player.maxSpeed = 5;
         player.scale = .35;
+        player.depth=2;
+        rocket.depth = 1;
         //sets player collition detection point to be smaller then the actual sprite to.
         player.setCollider("circle", 0,0,45);
+        rocket.setCollider("circle",0,0,1);
         playstate = 0;
-        //playstate = 7;
+        //playstate = 13;
 
         //set velocity to 0 to make sure its not moving.
 
@@ -221,7 +247,7 @@ function World1()
         puzzle = new Puzzle(world1Questions);//gives the puzzle class the set of world questions
         var buttonArray = [];
 
-        console.log("init"+nodesLocation[playstate][2]);
+        console.log("init "+nodesLocation[playstate][2]);
         xpos=nodesLocation[playstate][0];
         ypos=nodesLocation[playstate][1];
         puzzle.initializeQuestion(nodesLocation[playstate][2]);
