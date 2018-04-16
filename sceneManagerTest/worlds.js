@@ -96,7 +96,7 @@ function WorldPage()
           booleanworld.depth = 3;
           booleanworld.scale=1.5;
           if(mouseIsPressed){
-              worldSelected(World1);
+              worldSelected(World3);
           }
       }
       if(ifelseworld.mouseIsOver && check == false){
@@ -112,7 +112,7 @@ function WorldPage()
           forworld.depth = 3;
           forworld.scale = 1.5;
           if(mouseIsPressed){
-              worldSelected(World3);
+              worldSelected(World1);
           }
       }
       if(whileworld.mouseIsOver && check == false){
