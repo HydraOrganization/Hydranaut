@@ -251,7 +251,7 @@ class Puzzle
                             break;
                         }
                     }
-                    //b = false;
+
                 }
             }
             else{
@@ -364,6 +364,21 @@ class Button
                 textAlign(CENTER);
                 text(this.str, this.buttonX, this.buttonY + 9);
             }
+            //MOUSE IS OVER BUTTON CHANGE COLOR.
+            else if(this.over){
+                fill(10, 10, 10, 200);
+                stroke(0, 100, 150);
+                strokeWeight(3);
+                rectMode(CENTER);
+                rect(this.buttonX, this.buttonY, this.buttonWidth, this.buttonHeight, this.buttonRadius);
+
+                strokeWeight(0);
+                fill(46, 206, 245);
+                textSize(24);
+                textAlign(CENTER);
+                //text(this.str, this.buttonX, this.buttonY);
+                text(this.str, this.buttonX, this.buttonY + 9);
+            }//not selected
             else
             {
                 fill(10, 10, 10, 200);
@@ -378,26 +393,13 @@ class Button
                 textAlign(CENTER);
                 text(this.str, this.buttonX, this.buttonY + 9);
             }
-            //MOUSE IS OVER BUTTON CHANGE COLOR.
-            if(this.over){
-                fill(10, 10, 10, 200);
-                stroke(0, 100, 150);
-                strokeWeight(3);
-                rectMode(CENTER);
-                rect(this.buttonX, this.buttonY, this.buttonWidth, this.buttonHeight, this.buttonRadius);
 
-                strokeWeight(0);
-                fill(46, 206, 245);
-                textSize(24);
-                textAlign(CENTER);
-                text(this.str, this.buttonX, this.buttonY + 9);
-            }
         }
     }
     //check to see if mouse is over button.
     mouseover(x,y){
-        var dx = abs(x - this.buttonX);
-        var dy = abs(y - this.buttonY);
+        var dx = abs(x - this.buttonX)*2;
+        var dy = abs(y - this.buttonY)*2;
         if(dx <= this.buttonWidth && dy <= this.buttonHeight)
         {
             return true;
@@ -407,8 +409,9 @@ class Button
     //CHECK IF CLICK WAS MADE INSIDE THE BUTTON
     clicked(x, y)
     {
-        var dx = abs(x - this.buttonX);
-        var dy = abs(y - this.buttonY);
+        var dx = abs(x - this.buttonX)*2;
+        var dy = abs(y - this.buttonY)*2;
+        //var d = dist(x,y,this.buttonWidth, this.buttonHeight)
         if(dx <= this.buttonWidth && dy <= this.buttonHeight)
         {
             return true;

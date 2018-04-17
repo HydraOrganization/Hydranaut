@@ -57,14 +57,11 @@ function World1()
             if(c){
                 puzzle.buttonArray[i].over = true;
                 break;
-
             }
             else{
                 puzzle.buttonArray[i].over = false;
             }
         }
-
-
     }
 
     this.mousePressed = function()
