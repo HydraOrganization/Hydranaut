@@ -96,7 +96,7 @@ function WorldPage()
           booleanworld.depth = 3;
           booleanworld.scale=1.5;
           if(mouseIsPressed){
-              worldSelected(World3);
+              worldSelected("World2");
           }
       }
       if(ifelseworld.mouseIsOver && check == false){
@@ -104,7 +104,7 @@ function WorldPage()
           ifelseworld.depth = 3;
           ifelseworld.scale= 1.5;
           if(mouseIsPressed){
-              worldSelected(World2);
+              worldSelected("World2");
           }
       }
       if(forworld.mouseIsOver && check == false){
@@ -112,7 +112,7 @@ function WorldPage()
           forworld.depth = 3;
           forworld.scale = 1.5;
           if(mouseIsPressed){
-              worldSelected(World1);
+              worldSelected("World1");
           }
       }
       if(whileworld.mouseIsOver && check == false){
@@ -120,7 +120,7 @@ function WorldPage()
           whileworld.depth=3;
           whileworld.scale=1.25;
           if(mouseIsPressed){
-              worldSelected(World4);
+              worldSelected("World2");
           }
       }
 
@@ -138,7 +138,7 @@ function WorldPage()
 
       clear();//removes everything from the canvas
       //switch to world1 (change when world 4 is created
-      me.sceneManager.showScene(choice);
+      me.sceneManager.showScene(World1,choice);
   }
 
 

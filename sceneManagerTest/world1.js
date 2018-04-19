@@ -17,6 +17,9 @@ function World1()
     player = createSprite(200, 423);
     var me = this;
     var rocket;
+    var world;
+    var wm;
+    //console.log(w);
 
     //this is the first function that runs. it is needed when player comes back to this world it clear states.
     this.enter = function()
@@ -30,7 +33,7 @@ function World1()
     {
         //DISPLAY BOARD
         clear();
-        image(this.sceneManager.worldMap1, 0, 0, width, height);
+        image(wm, 0, 0, width, height);
 
         incorrect = false;
         //check to see if sprite is at node
@@ -80,7 +83,7 @@ function World1()
                 //CHECK TO SEE IF ITS A TUTORIAL ONLY ONE BUTTON = NEXT
                 if(1 == puzzle.buttonArray.length){
                    // if player has finished
-                    if(playstate == 15 ){
+                    if(playstate == 14 ){
                         console.log("MOVING ROCKET MOVING ROCKET MOVING ROCKET");
                         moveRocket();
                         //endGame();
@@ -119,7 +122,7 @@ function World1()
 
                             //no answer was selected don't show wrong
                             if(count > 1)
-                            puzzle.initializeQuestion(12);
+                            puzzle.initializeQuestion(11);
                         }
                         else{
                             goToNextNode();
@@ -147,7 +150,7 @@ function World1()
 //make player move to new attraction poing.
     function movePlayer()
     {
-        player.attractionPoint(4, xpos, ypos);
+        player.attractionPoint(2, xpos, ypos);
     }
 //set x and y posing
     function setxy()
@@ -190,28 +193,46 @@ function World1()
         nodesLocation = [
             [200,410,20],
             [200,410,21],
-            [200,410,1],
-            [250,330,2],
+            [250,330,1],
             [290,229,22],
-            [290,229,3],
-            [338,137,4],
-            [599,155,5],
+            [290,229,2],
+            [338,137,3],
+            [599,155,4],
             [579,263,23],
-            [579,263,6],
-            [570,395,7],
+            [579,263,5],
+            [570,395,6],
             [905,375,24],
-            [905,375,8],
-            [860,225,9],
-            [837,130,10],
-            [960,130,11]
+            [905,375,7],
+            [860,225,8],
+            [837,130,9],
+            [960,130,10]
         ];
+       // world = me.sceneArgs;
+       // console.log(world);
 
         rocket = createSprite(960,130);
+        rocket.addAnimation("rocket3", R1);
+        //check to see which world was passed and load correct questions, board, and rocket.
+        if(me.sceneArgs == "World3"){
+           // rocket.addAnimation("rocket1", R3);
+            puzzle = new Puzzle(world1Questions);
+            wm = me.sceneManager.worldMap3;
+        }
+        else if(me.sceneArgs == "World2"){
+            //rocket.addAnimation("rocket2", R2);
+            puzzle = new Puzzle(world2Questions);
+           wm = me.sceneManager.worldMap2;
+        }
+        else{
+            console.log("wrold1 was selected");
+            //rocket.addAnimation("rocket3", R1);
+            puzzle = new Puzzle(world1Questions);
+            wm = me.sceneManager.worldMap1;
+        }
 
         correct=true;
 
         playstate=0;
-
 
         mouseIsPressed=false;
         player.visible=true;
@@ -219,7 +240,6 @@ function World1()
 
 
         player.addAnimation("normal", p1);
-        rocket.addAnimation("rocket1", R1);
         rocket.scale = .25;
         //set max speed for when sprite moves.
         player.maxSpeed = 5;
@@ -230,7 +250,7 @@ function World1()
         player.setCollider("circle", 0,0,45);
         rocket.setCollider("circle",0,0,1);
         playstate = 0;
-        //playstate = 13;
+        //playstate = 4;
 
         //set velocity to 0 to make sure its not moving.
 
@@ -241,7 +261,7 @@ function World1()
 
 
 
-        puzzle = new Puzzle(world1Questions);//gives the puzzle class the set of world questions
+        //puzzle = new Puzzle(world1Questions);//gives the puzzle class the set of world questions
         var buttonArray = [];
 
         console.log("init "+nodesLocation[playstate][2]);

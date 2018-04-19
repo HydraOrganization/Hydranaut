@@ -48,15 +48,14 @@
       "answer2": "Dirt"
     },
     {
-      "question": "You need to gather more information about the planet. You can measure the planet’s temperature OR gravity OR atmosphere in order to satisfy the mission objective.",
-      "optionNum": 4,
+      "question": "You need to gather more information about the planet. You can measure the planet’s temperature OR atmosphere in order to satisfy the mission objective.",
+      "optionNum": 3,
       "option1": "Temperature",
       "option2": "Atmosphere",
-      "option3": "Gravity",
-      "option4": "Moons",
+      "option3": "Moons",
       "answer": "OR",
       "answer1": "Temperature",
-      "answer2": "Gravity"
+      "answer2": "Atmosphere"
 
     },
     {
@@ -88,17 +87,7 @@
       "answer2": "Blue"
     },
     {
-      "question": "other question.",
-      "optionNum": 4,
-      "option1": "Green",
-      "option2": "Red",
-      "option3": "Blue",
-      "option4": "Yellow",
-      "answer1": "Red",
-      "answer2": "Blue"
-    },
-    {
-      "question": "Leaving world",
+      "question": "Congratulations you have completed the boolean algebra world!",
       "optionNum": 0
     },
     {

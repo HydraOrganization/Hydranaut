@@ -1,0 +1,92 @@
+[
+   {
+    "tutorial": [[
+    "Knowing when to use IF/ELSE statements is another important part of writing computer code, no matter which programming language you use. Think of IF/ELSE statements as you wanting your computer program do something only IF a specific condition is met. OTHERWISE the program must do something different if that condition is not there. The OTHERWISE is typically known as ELSE in most programming languages. Look at the following example:\n\n\tIF the planet has a rocky surface then you can land your spaceship on it.\n\tOTHERWISE/ELSE you have to move on to the next planet to explore.\n\nFor this example the planet must have a rocky surface in order for you to be able to land on it. If it is rock then you can land. If it is not, then you would have to move on to the next planet. Boolean expressions (AND, OR, and NOT from the previous lesson) are used to determine the conditions of IF/ELSE statements. Let’s look at another example:\n\n\tIF the planet has a rocky surface AND has an atmosphere,\n\t\tthen you can land on the planet.\n\tELSE,\n\t\tyou must move on to the next planet.\n\nWe’ve used the Boolean operator AND in this example. Here both conditions must be true in order for you to proceed. The planet must be both rocky and have an atmosphere so you can land your spaceship. If either one of these are not true then you would have to move on to the next planet.\n\n"],
+      ["a"],
+      ["b"],
+    ["c"],
+    ["d"]],
+    "optionNum": 0
+   },
+   {
+    "question":
+    "You have arrived at the next planet. Before you can land your spaceship you must find a good landing spot.\n\tIF the landing spot is level,\n\t\tthen you can land your ship there.\n\tOTHERWISE/ELSE,\n\t\tyou cannot land at this spot.\nAfter looking at the landing spot, it appears to be level. Can you land here?\n",
+    "optionNum": 2,
+    "option1": "Yes",
+    "option2": "No",
+    "answer": "Yes"
+   },
+   {
+     "question":
+     "Great! You are able to land your spaceship. You exit the ship and look around the area.\n\tIF the weather is good AND it is daylight,\n\t\tthen you can start your expedition.\n\tELSE,\n\t\tyou have to wait for the proper conditions before beginning.\nYou notice that the weather does appear to be good and it is sunny out. What can you do?\n",
+     "optionNum": 2,
+     "option1": "Start expedition",
+     "option2": "Wait for proper conditions",
+     "answer": "Start expedition"
+   },
+   {
+     "question":
+     "You start walking and notice 2 possible routes to take. One path leads to a crater and the other towards a mountain.\n\tIF the path is level AND does NOT have any obstacles,\n\t\tthen it is safe to travel.\n\tELSE,\n\t\tIt is not safe and should not be used.\nThe path to the mountain is free of obstacle but not level. The path to the crater is level and free of obstacles. Which path will you take?\n",
+     "optionNum": 2,
+     "option1": "to the crater",
+     "option2": "to the mountain",
+     "answer": "to the crater"
+    },
+   {
+     "question":
+     "You arrive at the crater. You notice several rocks that would make great samples.\n\tIF the rock is made of crystals OR is made of metal,\n\t\tthen it should be collected.\n\tELSE,\n\t\tit is not an adequate sample.\nYou find a large metallic rock. Is this an acceptable sample to collect?\n",
+     "optionNum": 2,
+     "option1": "Yes",
+     "option2": "No",
+     "answer": "Yes"
+   },
+   {
+     "question":
+     "While looking for more samples you receive a message from another space explorer.\n\tIF the message is NOT an emergency,\n\t\tthen you can respond later once you return to the ship.\n\tELSE,\n\t\tyou should respond immediately.\nThe message appears to be an emergency. The other space explorer is on the same planet and his ship appears to be broken. What should you do?\n",
+     "optionNum": 2,
+     "option1": "Respond now to help",
+     "option2": "Wait and respond later",
+     "answer": "Respond now to help"
+   },
+   {
+     "question":
+     "Space explorer C-137 spaceship broke down on the same planet and needs help fixing it.\n\tIF C-137’s ship is out of fuel AND it’s batteries are NOT broken,\n\t\tthen you can help him with his ship\n\tELSE,\n\t\tyou cannot help him.\nAfter close inspection of the ship, it appears to be out of fuel but the batteries are no longer able to hold a charge. Will you be able to help C-137 fix his ship?\n",
+     "optionNum": 2,
+     "option1": "Yes",
+     "option2": "No",
+     "answer": "No"
+   },
+   {
+     "question":
+     "Luckily C-137 was able to find a replacement battery stored on his ship and you are able to give him some extra fuel. He thanks you with a belch and you are able to continue your journey.\n\tIF it is starting to get dark OR the temperature starts to get too cool,\n\t\tthen you should start heading back to your spaceship.\n\tELSE\n\t\tyou can continue to explore the planet.\nYou notice that there is still daylight but the planet temperature is starting  to fall. It is getting too cold. What will you do?\n",
+     "optionNum": 2,
+     "option1": "Continue your journey",
+     "option2": "Return to you spaceship",
+     "answer": "Return to you spaceship"
+   },
+   {
+     "question":
+     "Your return to your spaceship and start looking for the next planet to explore. There appears to be a planet about 2 light years away.\n\tIF a planet is less than 5 light years away,\n\t\tthen you can travel to it.\n\tELSE,\n\t\tyou have to look for a new planet to explore.\nCan you travel to this planet?\n",
+     "optionNum": 2,
+     "option1": "No",
+     "option2": "Yes",
+     "answer": "Yes"
+   },
+   {
+     "question":
+     "You take off towards the next planet to continue your journey.\n\tIF your fuel level is greater than 75%,\n\t\tthen you can travel to the next planet.\n\tELSE,\n\t\tyou cannot travel to next planet.Your fuel level is at 80%. Can you move on to the next planet?\n",
+     "optionNum": 2,
+     "option1": "Yes",
+     "option2": "No",
+     "answer": "Yes"
+   },
+   {
+     "question": "Leaving world",
+     "optionNum": 0
+   },
+   {
+     "question": "Wrong: Try agian",
+     "optionNum": 0
+   }
+
+ ]

@@ -3,10 +3,10 @@ var gameHeight;
 var bkImage;
 var hydra;
 var worldsMap;
-var worldMap1;
+var worldMap1,worldMap2,worldMap3;
 var player1Piece;//temp player token
 var nodeImageArr;
-var world1Questions;
+var world1Questions,world2Questions,world3Questions;
 var planet1;
 var planet2;
 var planet3;
@@ -15,7 +15,7 @@ var p1;
 var spaceShadows;
 var diamonds;
 var button, fontRegular;
-var R1;
+var R1,R2,R3;
 
 
 
@@ -118,6 +118,16 @@ class Puzzle
                 strLengthArr.push(this.questions[nodeNumber].option1.length);
                 strLengthArr.push(this.questions[nodeNumber].option2.length);
                 maxLength = max(strLengthArr);
+                var m=20;
+                //conole.log("maxLength");
+                if(maxLength > 15){
+                    maxLength -= 7;
+                    m=85;
+                }
+                else if(maxLength > 10){
+                   // maxLength -= 1;
+                    m=60;
+                }
 
                 this.answer = [];
                 // this.buttonArray.push(new Button(this.x + buttonColumns*3, this.y + this.height/9*8, maxLength, this.questions[nodeNumber].option1));
@@ -126,8 +136,8 @@ class Puzzle
                 // this.buttonArray.push(this.nextButton);
                 this.buttonArray.push( new Button(this.x + this.width/2, this.y + this.height - 25, 7, "SUBMIT"));
                 // this.buttonArray.push(this.nextButton)
-                this.buttonArray.push(new Button(this.x + buttonColumns*3, this.y + this.height/9*8 - 40, maxLength, this.questions[nodeNumber].option1));
-                this.buttonArray.push(new Button(this.x + buttonColumns*5, this.y + this.height/9*8 - 40, maxLength, this.questions[nodeNumber].option2));
+                this.buttonArray.push(new Button((this.x + buttonColumns*3)-m, this.y + this.height/9*8 - 40, maxLength, this.questions[nodeNumber].option1));
+                this.buttonArray.push(new Button((this.x + buttonColumns*5)+m, this.y + this.height/9*8 - 40, maxLength, this.questions[nodeNumber].option2));
                 this.answer.push(this.questions[nodeNumber].answer);
 
 
@@ -138,9 +148,9 @@ class Puzzle
                 strLengthArr.push(this.questions[nodeNumber].option2.length);
                 strLengthArr.push(this.questions[nodeNumber].option3.length);
                 maxLength = max(strLengthArr);
-                this.buttonArray.push(new Button(this.x + buttonColumns*2, this.y + this.height/9*8 - 30, maxLength, this.questions[nodeNumber].option1));
+                this.buttonArray.push(new Button(this.x + buttonColumns*1 + 20, this.y + this.height/9*8 - 30, maxLength, this.questions[nodeNumber].option1));
                 this.buttonArray.push(new Button(this.x + buttonColumns*4, this.y + this.height/9*8 - 30, maxLength, this.questions[nodeNumber].option2));
-                this.buttonArray.push(new Button(this.x + buttonColumns*6, this.y + this.height/9*8 - 30, maxLength, this.questions[nodeNumber].option3));
+                this.buttonArray.push(new Button(this.x + buttonColumns*7 - 20, this.y + this.height/9*8 - 30, maxLength, this.questions[nodeNumber].option3));
                 this.nextButton = new Button(this.x + this.width/2, this.y + this.height - 25, 7, "SUBMIT");
                 this.buttonArray.push(this.nextButton);
                 this.answer = [];
@@ -326,6 +336,11 @@ class Button
     constructor(x, y, w, str)
     {
         //BUTTON LOCATION
+        console.log("x = "+x+" y = "+y+ " w = "+ w);
+        // if(x > 11){
+        //     w = w-7;
+        //     y = y - 10;
+        // }
         this.buttonX = x;
         this.buttonY = y;
 
@@ -360,7 +375,7 @@ class Button
 
                 strokeWeight(0);
                 fill(255, 255, 255);
-                textSize(24);
+                textSize(20);
                 textAlign(CENTER);
                 text(this.str, this.buttonX, this.buttonY + 9);
             }
@@ -374,7 +389,7 @@ class Button
 
                 strokeWeight(0);
                 fill(46, 206, 245);
-                textSize(24);
+                textSize(20);
                 textAlign(CENTER);
                 //text(this.str, this.buttonX, this.buttonY);
                 text(this.str, this.buttonX, this.buttonY + 9);
@@ -389,7 +404,7 @@ class Button
 
                 strokeWeight(0);
                 fill(0, 100, 150);
-                textSize(24);
+                textSize(20);
                 textAlign(CENTER);
                 text(this.str, this.buttonX, this.buttonY + 9);
             }
@@ -454,6 +469,8 @@ function preload()
     hydra = loadImage('images/hydra.png');
     worldsMap = loadImage('images/worldsMap.png');
     worldMap1 = loadImage('images/World2.png');
+    worldMap2 = loadImage('images/World3.png');
+    worldMap3 = loadImage('images/World4.png');
     player1Piece = loadImage('images/gamePiece.png');//load player piece (434X720)
     spaceShadows = loadImage('images/spaceShadows.png');
     diamonds = loadImage('images/diamonds1.png');
@@ -469,9 +486,8 @@ function preload()
 
 
     R1=loadAnimation("images/ROCKIT-World1.png");
-    //rocket=loadAnimation("rocket1","images/ROCKIT-Wold1.png");
-    // rocket=loadAnimation("rocket2","images/ROCKIT-Wold2.png");
-    // rocket=loadAnimation("rocket3","images/ROCKIT-Wold3.png");
+   // R2=loadAnimation("images/ROCKIT-Wold2.png");
+    //R3=loadAnimation("images/ROCKIT-Wold3.png");
     // dGreen=loadAnimation("images/DG2.png");
     // dOrange==loadAnimation("images/DY2.png");
     // dBlue=loadAnimation("images/DB2.png");
@@ -479,7 +495,10 @@ function preload()
     // hBlue=loadAnimation("images/BH1.png");
 
     //LOAD WORLD QUESTIONS FROM JSON FILE
+
     world1Questions = loadJSON("world1Questions.json");
+    world2Questions = loadJSON("world2Questions.json");
+
 }
 
 function setup()
@@ -499,6 +518,8 @@ function setup()
     mgr.hydra = hydra;
     mgr.worldsMap = worldsMap;
     mgr.worldMap1 = worldMap1;
+    mgr.worldMap2 = worldMap2;
+    mgr.worldMap3 = worldMap3;
     mgr.player1Piece = player1Piece;
 
     mgr.planet1=planet1;
@@ -507,8 +528,8 @@ function setup()
     mgr.planet4=planet4;
 
     mgr.R1=R1;
-    // mgr.dGreen=dGreen;
-    // mgr.dOrange=dOrange;
+    mgr.R2=R2;
+    mgr.R3=R3;
     // mgr.dBlue=dBlue;
     // mgr.hRed=hRed;
     // mgr.hBlue=hBlue;
@@ -522,7 +543,7 @@ function setup()
     mgr.wire();
 
     //SWITCH TO THE FRONT PAGE
-    mgr.showScene(FrontPage);
+    mgr.showScene(WorldPage);
 }
 
 function windowResized() {
