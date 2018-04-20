@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-	$connection = mysqli_connect('');
-
+	//init connection with database
+	$connection = mysqli_connect('littlegrapher.ckslwoktsrzf.us-east-1.rds.amazonaws.com:3306','taskiiAdmin','bluesnowballUNT1','Taskii');
 
 $user = $_POST['userInput'];
 
@@ -24,7 +24,9 @@ if (isset($_POST["submit"]))
 				//Araon: change worldSelect.html to your own world page
 				// one single / is for backing out of the php folder into the folder with index
 				//other wise "foldername"/"worldselect" will be needed
-				header("location: /worldSelect.html?user='$user'&world=$world");
+
+				//Chema: changed the location to the main index file that lives in the sceneManagerTest directory.
+				header("location: ..sceneManagerTest/index.html?user='$user'&world=$world");
       }
        else
       {

@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-	$connection = mysqli_connect('server:port','user','pass','db');
+	//init connection with database
+	$connection = mysqli_connect('littlegrapher.ckslwoktsrzf.us-east-1.rds.amazonaws.com:3306','taskiiAdmin','bluesnowballUNT1','Taskii');
 
 $user = $_POST['userInput'];
 

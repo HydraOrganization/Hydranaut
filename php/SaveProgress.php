@@ -9,6 +9,8 @@ $world = $_GET['world'];
 
 $query = "update  UNT_Users set world = '$world' where name ='$name'";
 mysqli_query($connection,$query);
-header("location: /worldSelect.html?user=$user&world=$world");
+
+//This is the new location for redirecting the user to the world select page (in the sceneManagerTest view).
+header("location: ..sceneManagerTest/index.html?user=$user&world=$world");
 
 ?>

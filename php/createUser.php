@@ -3,8 +3,7 @@
 <?php
 session_start();
 
-		$connection = mysqli_connect('');
-
+	$connection = mysqli_connect('littlegrapher.ckslwoktsrzf.us-east-1.rds.amazonaws.com:3306','taskiiAdmin','bluesnowballUNT1','Taskii');
 
 $user = $_POST['userInput'];
 
@@ -38,7 +37,9 @@ if (isset($_POST["submit"]))
       {
 				$query = "insert into UNT_Users(name, world, level) values('$user', 0, 0)";
 				mysqli_query($connection,$query);
-				header("location: /worldSelect.html?user=$user&world=0");
+				
+				//This is the new location for redirecting the user to the world select page (in the sceneManagerTest view).
+				header("location: ..sceneManagerTest/index.html?user=$user&world=0");
       }
     }
 
