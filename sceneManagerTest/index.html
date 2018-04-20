@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>p5Test</title>
+	<title>Play | Hydranaut</title>
 
 	<script src="libraries/p5.js"></script>
 	<script src="libraries/p5.dom.js"></script>
@@ -70,6 +70,19 @@ font-family: 'Combo', cursive
 			border-color: black;
 			border-radius: 15px;
 		}
+		.canvas-border{
+			/*the bh can be temp since the css doesn't work when resizing window after load*/
+			background-image: url('images/temp-bg.jpg');
+			/*background-color: black;*/
+			margin: auto;
+			width: 1280px;
+			height: 720px;
+			padding: 0px;
+			border-radius: 15px;
+			border-style: hidden;
+			position: relative;
+		}
+
 		text{
 			font-family: 'Overpass Mono', monospace;
 		}
@@ -80,6 +93,8 @@ font-family: 'Combo', cursive
 		<h3 id="playername"></h3>
 	</div>
 	<div class="logo"> <div id="circle"> <img src="images/hydra.png"></img></div></div>
+	<div class="canvas-border">
 
+	</div>
 </body>
 </html>
