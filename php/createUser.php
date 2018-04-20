@@ -37,9 +37,9 @@ if (isset($_POST["submit"]))
       {
 				$query = "insert into UNT_Users(name, world, level) values('$user', 0, 0)";
 				mysqli_query($connection,$query);
-				
+
 				//This is the new location for redirecting the user to the world select page (in the sceneManagerTest view).
-				header("location: ..sceneManagerTest/index.html?user=$user&world=0");
+				header("location: ../sceneManagerTest/index.html?user=$user&world=0");
       }
     }
 

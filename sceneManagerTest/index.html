@@ -15,9 +15,14 @@
 	<script src="world1.js"></script>
 	<script src="worldsMap.js"></script>
 	<script src="worlds.js"></script>
+	<script src="playerInfo.js"></script>
 
 <!--font-->
 	<link href="https://fonts.googleapis.com/css?family=Combo|Overpass+Mono|VT323" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!--
 font-family: 'VT323', monospace;
 font-family: 'Overpass Mono', monospace;
@@ -26,20 +31,55 @@ font-family: 'Combo', cursive
 
 	<style>
 		body {
+			background-image: url('images/spacebg_0.png');
+			background-size: auto;
 			margin:0;
 			padding:0;
 			overflow: hidden;
 		}
+
+		.playerinfo-div{
+			background-color: #000;
+			max-width: 100%;
+			min-height: 50px;
+		}
+		.playerinfo-div h3{
+			margin-left: auto;
+			color: white;
+		}
+
+
+
+		.logo {
+			margin:auto;
+		}
+		.logo img {
+			background: #563d7c;
+			display: block;
+			border-radius: 50%;
+			-moz-border-radius: 50%;
+			-webkit-border-radius: 50%;
+	    margin-left: auto;
+	    margin-right: auto;
+			max-height: 250px;
+		}
 		canvas {
 			margin:auto;
+			border-style: solid;
+			border-width:thick;
+			border-color: black;
+			border-radius: 15px;
 		}
 		text{
 			font-family: 'Overpass Mono', monospace;
 		}
 	</style>
 </head>
-<body>
-
+<body onload="parseURLParams()">
+	<div class="playerinfo-div">
+		<h3 id="playername"></h3>
+	</div>
+	<div class="logo"> <div id="circle"> <img src="images/hydra.png"></img></div></div>
 
 </body>
 </html>

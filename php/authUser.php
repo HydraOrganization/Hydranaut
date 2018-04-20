@@ -26,7 +26,7 @@ if (isset($_POST["submit"]))
 				//other wise "foldername"/"worldselect" will be needed
 
 				//Chema: changed the location to the main index file that lives in the sceneManagerTest directory.
-				header("location: ..sceneManagerTest/index.html?user='$user'&world=$world");
+				header("location: ../sceneManagerTest/index.html?user='$user'&world=$world");
       }
        else
       {
