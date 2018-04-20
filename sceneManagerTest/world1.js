@@ -240,6 +240,8 @@ function World1()
 
 
         player.addAnimation("normal", p1);
+        //frame rate adjusted for the player animation
+        frameRate(12);
         rocket.scale = .25;
         //set max speed for when sprite moves.
         player.maxSpeed = 5;
