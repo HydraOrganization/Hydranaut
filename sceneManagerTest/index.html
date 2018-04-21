@@ -39,20 +39,19 @@ font-family: 'Combo', cursive
 		}
 
 		.playerinfo-div{
-			background-color: #000;
+			/*background-color: #000;*/
 			max-width: 100%;
-			min-height: 50px;
+			/*min-height: 50px;*/
 		}
 		.playerinfo-div h3{
 			margin-left: auto;
 			color: white;
 		}
 
-
-
 		.logo {
 			margin:auto;
 		}
+		/*
 		.logo img {
 			background: #563d7c;
 			display: block;
@@ -62,26 +61,19 @@ font-family: 'Combo', cursive
 	    margin-left: auto;
 	    margin-right: auto;
 			max-height: 250px;
-		}
+		}*/
 		canvas {
 			margin:auto;
-			border-style: solid;
-			border-width:thick;
-			border-color: black;
-			border-radius: 15px;
+			border: 5px solid #111;
+			-moz-box-shadow: 35px 35px 7px #999999;
+			-moz-border-bottom-right-radius: 15px;
+			-moz-border-radius:25px;
+			/*border-style: groove;
+			border-width:50px;
+			border-color: #d2e3ed;*/
+			/*border-radius: 15px;*/
 		}
-		.canvas-border{
-			/*the bh can be temp since the css doesn't work when resizing window after load*/
-			background-image: url('images/temp-bg.jpg');
-			/*background-color: black;*/
-			margin: auto;
-			width: 1280px;
-			height: 720px;
-			padding: 0px;
-			border-radius: 15px;
-			border-style: hidden;
-			position: relative;
-		}
+
 
 		text{
 			font-family: 'Overpass Mono', monospace;
@@ -92,9 +84,6 @@ font-family: 'Combo', cursive
 	<div class="playerinfo-div">
 		<h3 id="playername"></h3>
 	</div>
-	<div class="logo"> <div id="circle"> <img src="images/hydra.png"></img></div></div>
-	<div class="canvas-border">
-
-	</div>
+	<div class="logo"> <div id="circle"></div></div>
 </body>
 </html>
