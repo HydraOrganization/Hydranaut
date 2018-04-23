@@ -22,7 +22,7 @@ function WorldPage()
 
     //booleanworld sprite is the planet to be able to enlarge when mouse is active
     //createsprite tell it where to be place
-    booleanworld = createSprite(((width/4)+63),(height/4)+35);
+    booleanworld = createSprite(((width/4)-127),(height/4)+160);
     //add the image to the sprite, normal is just a name given.
     booleanworld.addAnimation("normal", planet1);
     //turn on mouse functions of sprite.
@@ -31,7 +31,7 @@ function WorldPage()
 
     //ifelseworld sprite is the planet to be able to enlarge when mouse is active
     //createsprite tell it where to be place
-    ifelseworld = createSprite(((width/4)+560),(height/4)+40);
+    ifelseworld = createSprite(((width/4)+315),(height/4)+160);
     //add the image to the sprite, normal is just a name given.
     ifelseworld.addAnimation("normal", planet2);
     ifelseworld.mouseActive=true;//activate hydra mouse click
@@ -40,17 +40,17 @@ function WorldPage()
 
     //forworldsprite is the planet to be able to enlarge when mouse is active
     //createsprite tell it where to be place
-    forworld = createSprite(((width/4)+60),(height/4)+350);
+    forworld = createSprite(((width/4)+770),(height/4)+160);
     //add the image to the sprite, normal is just a name given.
     forworld.addAnimation("normal", planet3);
     forworld.mouseActive=true;//activate hydra mouse click
 
     //whileworld sprite is the planet to be able to enlarge when mouse is active
     //createsprite tell it where to be place
-    whileworld = createSprite(((width/4)+560),(height/4)+350);
+  //  whileworld = createSprite(((width/4)+560),(height/4)+350);
     //add the image to the sprite, normal is just a name given.
-    whileworld.addAnimation("normal", planet4);
-    whileworld.mouseActive=true;//activate hydra mouse click
+  //  whileworld.addAnimation("normal", planet4);
+  //  whileworld.mouseActive=true;//activate hydra mouse click
 
 
     //shadow image of planets.
@@ -60,7 +60,7 @@ function WorldPage()
         booleanworld.visible = true;
         ifelseworld.visible = true;
         forworld.visible = true;
-        whileworld.visible = true;
+        //whileworld.visible = true;
 
     }
 
@@ -82,13 +82,13 @@ function WorldPage()
       ifelseworld.scale= 1;
       forworld.depth = 1;
       forworld.scale = 1;
-      whileworld.depth=1;
-      whileworld.scale=1;
+      //whileworld.depth=1;
+      //whileworld.scale=1;
       //makes sprites rotate for planets
       booleanworld.rotation += .5;
       ifelseworld.rotation += .5;
       forworld.rotation += .5;
-      whileworld.rotation += .5;
+      //whileworld.rotation += .5;
 
       //if mouse is oversprite scale sprite and set check to true
       if(booleanworld.mouseIsOver && check == false){
@@ -115,14 +115,14 @@ function WorldPage()
               worldSelected("World1");
           }
       }
-      if(whileworld.mouseIsOver && check == false){
+    /*  if(whileworld.mouseIsOver && check == false){
       check =true;
           whileworld.depth=3;
           whileworld.scale=1.25;
           if(mouseIsPressed){
               worldSelected("World2");
           }
-      }
+      }*/
 
 
       //drawsprites
@@ -133,7 +133,7 @@ function WorldPage()
       booleanworld.visible = false;
       ifelseworld.visible = false;
       forworld.visible = false;
-      whileworld.visible = false;
+      //whileworld.visible = false;
       shadow.visible =false;
 
       clear();//removes everything from the canvas

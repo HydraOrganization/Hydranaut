@@ -467,12 +467,12 @@ function preload()
     //load all images
     bkImage = loadImage('images/indexBG.jpg');
     hydra = loadImage('images/hydra.png');
-    worldsMap = loadImage('images/worldsMap.png');
+    worldsMap = loadImage('images/worldsMap-new-real.png');
     worldMap1 = loadImage('images/World2.png');
     worldMap2 = loadImage('images/World3.png');
     worldMap3 = loadImage('images/World4.png');
     player1Piece = loadImage('images/gamePiece.png');//load player piece (434X720)
-    spaceShadows = loadImage('images/spaceShadows.png');
+    spaceShadows = loadImage('images/spaceShadowsv2.png');
     diamonds = loadImage('images/diamonds1.png');
 
 
@@ -525,7 +525,7 @@ function setup()
     mgr.planet1=planet1;
     mgr.planet2=planet2;
     mgr.planet3=planet3;
-    mgr.planet4=planet4;
+    //mgr.planet4=planet4;
 
     mgr.R1=R1;
     mgr.R2=R2;
