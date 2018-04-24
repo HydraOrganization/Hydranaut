@@ -205,8 +205,11 @@ class Puzzle
             //PUZZLE TEXT
             strokeWeight(0);
             fill(255);
-            textSize(20);
+            textSize(19);
             textFont(fontRegular);
+            if(this.currentQuestion.length >300 ){
+                textSize(16);
+            }
             text(this.currentQuestion, this.x + 10, this.y + 25, 700, 300);
 
             //BUTTONS
@@ -468,9 +471,9 @@ function preload()
     bkImage = loadImage('images/indexBG.jpg');
     hydra = loadImage('images/hydra.png');
     worldsMap = loadImage('images/worldsMap-new-real.png');
-    worldMap1 = loadImage('images/World2.png');
-    worldMap2 = loadImage('images/World3.png');
-    worldMap3 = loadImage('images/World4.png');
+    worldMap1 = loadImage('images/World3.png');
+    worldMap2 = loadImage('images/World4.png');
+    worldMap3 = loadImage('images/World2.png');
     player1Piece = loadImage('images/gamePiece.png');//load player piece (434X720)
     spaceShadows = loadImage('images/spaceShadowsv2.png');
     diamonds = loadImage('images/diamonds1.png');
@@ -528,8 +531,7 @@ function setup()
     //mgr.planet4=planet4;
 
     mgr.R1=R1;
-    mgr.R2=R2;
-    mgr.R3=R3;
+
     // mgr.dBlue=dBlue;
     // mgr.hRed=hRed;
     // mgr.hBlue=hBlue;

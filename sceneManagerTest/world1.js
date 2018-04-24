@@ -83,7 +83,7 @@ function World1()
                 //CHECK TO SEE IF ITS A TUTORIAL ONLY ONE BUTTON = NEXT
                 if(1 == puzzle.buttonArray.length){
                    // if player has finished
-                    if(playstate == 14 ){
+                    if(playstate == 11 ){
                         console.log("MOVING ROCKET MOVING ROCKET MOVING ROCKET");
                         moveRocket();
                         //endGame();
@@ -194,19 +194,33 @@ function World1()
             [200,410,20],
             [200,410,21],
             [250,330,1],
-            [290,229,22],
             [290,229,2],
             [338,137,3],
             [599,155,4],
-            [579,263,23],
             [579,263,5],
             [570,395,6],
-            [905,375,24],
             [905,375,7],
             [860,225,8],
             [837,130,9],
             [960,130,10]
         ];
+        // nodesLocation = [
+        //     [200,410,20],
+        //     [200,410,21],
+        //     [250,330,1],
+        //     [290,229,22],
+        //     [290,229,2],
+        //     [338,137,3],
+        //     [599,155,4],
+        //     [579,263,23],
+        //     [579,263,5],
+        //     [570,395,6],
+        //     [905,375,24],
+        //     [905,375,7],
+        //     [860,225,8],
+        //     [837,130,9],
+        //     [960,130,10]
+        // ];
        // world = me.sceneArgs;
        // console.log(world);
 
