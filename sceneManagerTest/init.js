@@ -246,6 +246,7 @@ class Puzzle
 
         var t = this.type;
         console.log("type = "+t);
+        console.log("type = "+t);
 
 
         var b = true;
@@ -476,12 +477,15 @@ function preload()
     worldMap3 = loadImage('images/World2.png');
     player1Piece = loadImage('images/gamePiece.png');//load player piece (434X720)
     spaceShadows = loadImage('images/spaceShadowsv2.png');
-    diamonds = loadImage('images/diamonds1.png');
+    //diamonds = loadImage('images/diamonds1.png');
 
 
 
     //load all sprites images.
-    p1 = loadAnimation('images/player-piece2.png','images/player-piece3.png');
+
+    //p1 = loadAnimation("images/p2.png","images/p1.png","images/p3.png");
+    p1 = loadAnimation("images/p2.png","images/p1.png","images/p2.png","images/p3.png");
+    // p1 = loadAnimation('images/player-piece2.png','images/player-piece3.png');
     planet1=loadAnimation("images/planet1.png");
     planet2=loadAnimation("images/planet2.png");
     planet3=loadAnimation("images/planet3.png");
@@ -536,7 +540,7 @@ function setup()
     // mgr.hRed=hRed;
     // mgr.hBlue=hBlue;
 
-    mgr.spaceShadows=spaceShadows;
+    mgr.spaceShadows= spaceShadows;
     mgr.diamonds = diamonds;
     mgr.p1=p1;
 

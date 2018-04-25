@@ -83,7 +83,7 @@ function World1()
                 //CHECK TO SEE IF ITS A TUTORIAL ONLY ONE BUTTON = NEXT
                 if(1 == puzzle.buttonArray.length){
                    // if player has finished
-                    if(playstate == 11 ){
+                    if(playstate == 14 ){
                         console.log("MOVING ROCKET MOVING ROCKET MOVING ROCKET");
                         moveRocket();
                         //endGame();
@@ -143,6 +143,9 @@ function World1()
         {
             player.setVelocity(0, 0);
             //puzzle.depth = -2;
+            if(playstate==15)
+                puzzle.visible = false;
+            else
             puzzle.visible = true;//show next puzzle
 
         }
@@ -176,11 +179,13 @@ function World1()
     function moveRocket(){
         player.visible=false;
         rocket.visible=true;
+        puzzle.visible=false;
         rocket.velocity.y = -2;
     }
 
     //endGame takes you back to the world game. makes player invisible.
     function endGame(){
+        puzzle.visible=false;
         player.visible=false;
         rocket.visible=false;
         mouseIsPressed=false;
@@ -190,37 +195,39 @@ function World1()
     }
     //initialize game this is needed if player comes back to game multiple times. it resets the game.
     function initGame(){
-        nodesLocation = [
-            [200,410,20],
-            [200,410,21],
-            [250,330,1],
-            [290,229,2],
-            [338,137,3],
-            [599,155,4],
-            [579,263,5],
-            [570,395,6],
-            [905,375,7],
-            [860,225,8],
-            [837,130,9],
-            [960,130,10]
-        ];
         // nodesLocation = [
         //     [200,410,20],
         //     [200,410,21],
         //     [250,330,1],
-        //     [290,229,22],
         //     [290,229,2],
         //     [338,137,3],
+        //     [579,263,22],
         //     [599,155,4],
-        //     [579,263,23],
         //     [579,263,5],
         //     [570,395,6],
-        //     [905,375,24],
+        //     [905,375,23],
         //     [905,375,7],
         //     [860,225,8],
         //     [837,130,9],
         //     [960,130,10]
         // ];
+        nodesLocation = [
+            [200,410,20],
+            [200,410,21],
+            [250,330,1],
+            [290,229,22],
+            [290,229,2],
+            [338,137,3],
+            [599,155,4],
+            [579,263,23],
+            [579,263,5],
+            [570,395,6],
+            [905,375,24],
+            [905,375,7],
+            [860,225,8],
+            [837,130,9],
+            [960,130,10]
+        ];
        // world = me.sceneArgs;
        // console.log(world);
 
@@ -258,14 +265,14 @@ function World1()
         rocket.scale = .25;
         //set max speed for when sprite moves.
         player.maxSpeed = 5;
-        player.scale = .35;
+        player.scale = 1.2;
         player.depth=2;
         rocket.depth = 1;
         //sets player collition detection point to be smaller then the actual sprite to.
-        player.setCollider("circle", 0,0,45);
+        player.setCollider("circle", 0,0,15);
         rocket.setCollider("circle",0,0,1);
         playstate = 0;
-        //playstate = 4;
+        playstate = 10;
 
         //set velocity to 0 to make sure its not moving.
 

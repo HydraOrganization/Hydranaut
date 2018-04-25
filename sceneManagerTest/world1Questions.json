@@ -1,23 +1,23 @@
 
   [
     {
-      "tutorial": [["Welcome to the Boolean World\n\n You are going to rescue your friend from a planet that is going to explode soon. You have to get to the Planet in time to rescue your friend. First you need to collect the required essentials to survive in space."],
-        ["Boolean Algebra is used in Computer Programing and Digital Electronics. It is used to represent things as either true or false. \n 0 = false  \n 1 = true\nExample:\n TRUE(1): My shirt is white\nFALSE(0): My shirt is Not white\n. You must answer the question correct to pass by and collect Water, Air, and Food."],
-        ["The NOT means the opposite, the operator is written with a bar over the word, letter, or number like this:\n _ \n 1 = 0\n _\n 1 = 0\n  "],
-        ["def AND"],
-        ["def OR"]
+      "tutorial": [["Welcome to the Boolean World!\n\n You are going to rescue your friend from a planet that is going to explode soon. You have to get to the Planet in time to rescue your friend. First you need to collect the required essentials to survive in space."],
+        ["Boolean Algebra is used in Computer Programing and Digital Electronics. It is used to represent things as either true or false. \n 0 = false  \n 1 = true\nExample:\nYou go to school on weekdays only.\nToday is Monday = true, you are at school.\nToday is Sunday = false, you are not at school"],
+        ["NOT\nYou can also use a NOT to make a statement that is \ntrue to false \nfalse to true\nFor example. The lights are NOT off  = the lights are on\n"],
+        ["AND\nYou can check more than one condition by using an AND.\nWith an AND both conditions must be true to = true\nIf only one condition is true then the whole thing is false.\n For Example: You play outside after school AND sunny days.\n  It is after school and it is raining = FALSE you will not be playing since it is Not sunny\n Example: It is during school and it is sunny = FALSE you will not be playing out side since it is NOT after school "],
+        ["OR\nOR statements make things true if one or all conditions are true.\nIf none of the conditions are true then the statement is false.\n For Example: You play outside on sunny OR cloudy days\n Today sunday = true you will play outside.\n Today is rainy = False you will not play outisde\n Today is Cloudy = true you will play outside."]
       ],
       "optionNum": 0
     },
     {
-     "question": "Going on the space adventure requires that your spaceship is NOT broken. After an inspection of the ship you find that you ship’s rockets are not working. Will you be able to go on the space adventure?",
+     "question": "Going on the space adventure requires that your spaceship is working.\n After an inspection of the ship you find that you ship’s rockets are not working.\nWill you be able to go on the space adventure?",
      "optionNum": 2,
      "option1": "Yes",
      "option2": "No",
      "answer": "No"
     },
     {
-      "question": "You fix your spaceship and are ready to go. You plot a course to your destination and are ready to make to the jump to hyperspace. Before you can go, the course must NOT have any obstacles in the way. You review the course and find that it is free of obstacles. Can you make the jump to hyperspace?",
+      "question": "You fix your spaceship and are ready to go. \nYou plot a course to your destination and are ready to make to the jump to hyperspace. \nBefore you can go, the course must NOT have any obstacles in the way. \nYou review the course and find that it is free of obstacles.\n Can you make the jump to hyperspace?",
       "optionNum": 2,
       "option1": "Yes",
       "option2": "No",
