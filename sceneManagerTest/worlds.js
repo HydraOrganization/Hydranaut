@@ -163,6 +163,7 @@ function WorldPage()
       clear();//removes everything from the canvas
       //switch to world1 (change when world 4 is created
       me.sceneManager.showScene(World1,choice);
+
   }
 
 

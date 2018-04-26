@@ -472,9 +472,9 @@ function preload()
     bkImage = loadImage('images/indexBG.jpg');
     hydra = loadImage('images/hydra.png');
     worldsMap = loadImage('images/worldsMap-new-real.png');
-    worldMap1 = loadImage('images/World3.png');
+    worldMap1 = loadImage('images/World2.png');
     worldMap2 = loadImage('images/World4.png');
-    worldMap3 = loadImage('images/World2.png');
+    worldMap3 = loadImage('images/World3.png');
    // player1Piece = loadImage('images/gamePiece.png');//load player piece (434X720)
     spaceShadows = loadImage('images/spaceShadowsv2.png');
     //diamonds = loadImage('images/diamonds1.png');
