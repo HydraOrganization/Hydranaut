@@ -240,7 +240,7 @@ function World1()
         //check to see which world was passed and load correct questions, board, and rocket.
         if(me.sceneArgs == "World3"){
            // rocket.addAnimation("rocket1", R3);
-            puzzle = new Puzzle(world1Questions);
+            puzzle = new Puzzle(world3Questions);
             wm = me.sceneManager.worldMap3;
         }
         else if(me.sceneArgs == "World2"){

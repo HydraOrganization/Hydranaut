@@ -505,6 +505,9 @@ function preload()
 
     world1Questions = loadJSON("world1Questions.json");
     world2Questions = loadJSON("world2Questions.json");
+    world3Questions = loadJSON("world3Questions.json");
+
+
 
     //Let's load all the sounds ...shall we?
     soundFormats('wav', 'mp3');

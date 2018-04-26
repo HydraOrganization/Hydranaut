@@ -1,24 +1,15 @@
 [
    {
-    "tutorial": [[
-    "One of the more important aspects of writing computer code is using loops. Loops are programming “devices” that allow a program to repeat an action for a specified amount of times. This is important if you want your program to perform various tasks repeatedly or you need it to wait for a specific condition. There are several different types loops. We specifically will be looking at WHILE and FOR loops.\n
-    WHILE loops are condition based. This means that if a specified condition is true then the loop will continue to cycle through an action until the condition is no longer true. Then the loop stops and the program proceeds to the next part. Look at the following example as well as the loop layout:\n
-    \tWHILE this is TRUE,\n
-    \t\trepeat this action.\n
-    In order for this loop to stop there must be an action that will make condition FALSE otherwise you will have an infinite loop (loop never stops). Once the WHILE statement is FALSE then the loop ends.\n
-    FOR loops rely on a counter for how many times a loop cycles through its processes. When a FOR loop is used the starting point and the number of times it cycles through are indicated. Once the loop counter goes through the indicated number of cycles, the loop ends and the next process in the program activates. Look at the following example and loop layout:\n
-    \tFOR (when the initial counter starts at 0, repeat action 5 times),\n
-    \t\tthis action is repeated\n
-    Here the for loop counter starts at zero and repeats through the loop 5, repeating the action in the loop five time. Then the loop ends and the next part of the program starts.\n"]],
+    "tutorial": [
+    ["One of the more important aspects of writing computer code is using loops. Loops are programming “devices” that allow a program to repeat an action for a specified amount of times. This is important if you want your program to perform various tasks repeatedly or you need it to wait for a specific condition. There are several different types loops. We specifically will be looking at WHILE and FOR loops.\n"],
+    ["WHILE loops are condition based. This means that if a specified condition is true then the loop will continue to cycle through an action until the condition is no longer true. Then the loop stops and the program proceeds to the next part. Look at the following example as well as the loop layout:\n\tWHILE this is TRUE,\n\t\trepeat this action.\n In order for this loop to stop there must be an action that will make condition FALSE otherwise you will have an infinite loop (loop never stops). Once the WHILE statement is FALSE then the loop ends.\n"],
+    ["FOR loops rely on a counter for how many times a loop cycles through its processes. When a FOR loop is used the starting point and the number of times it cycles through are indicated. Once the loop counter goes through the indicated number of cycles, the loop ends and the next process in the program activates. Look at the following example and loop layout:\n\tFOR (when the initial counter starts at 0, repeat action 5 times),\n\t\tthis action is repeated\n Here the for loop counter starts at zero and repeats through the loop 5, repeating the action in the loop five time. Then the loop ends and the next part of the program starts.\n"]
+    ],
     "optionNum": 0
    },
    {
     "question":
-    "You’ve arrived at the next planet. Before landing you have to wait for there to be sunlight over the landing zone. According to the ship computer, sunlight will be over the landing zone in 15 minutes. You set a timer to let you know.\n
-    \tWHILE timer is NOT EQUAL to 15 minutes,\n
-	  \t\twait one more minute.\n
-    \tThen  you can land your spaceship.\n
-    You wait for 13 minutes. Does this mean you can land now?\n",
+    "You’ve arrived at the next planet. Before landing you have to wait for there to be sunlight over the landing zone. According to the ship computer, sunlight will be over the landing zone in 15 minutes. You set a timer to let you know.\n\tWHILE timer is NOT EQUAL to 15 minutes,\n\t\twait one more minute.\n\tThen  you can land your spaceship.\nYou wait for 13 minutes. Does this mean you can land now?\n",
     "optionNum": 2,
     "option1": "Yes",
     "option2": "No",
@@ -26,11 +17,7 @@
    },
    {
      "question":
-     "You wait 2 more minutes and then begin your descent toward the planet. You land on the planet. Before you can leave the ship the temperature outside needs to increase to a safer level.\n
-     \tWHILE the temperature is LESS than 4 degrees celsius,\n
-     \t\ttemperature increases 1 degrees celsius.\n
-     \tThen you can depart.\n
-     The temperature is currently 2 degrees celsius. How many loops through the cycle do you have to wait?\n",
+     "You wait 2 more minutes and then begin your descent toward the planet. You land on the planet. Before you can leave the ship the temperature outside needs to increase to a safer level.\n\tWHILE the temperature is LESS than 4 degrees celsius,\n\t\ttemperature increases 1 degrees celsius.\n\tThen you can depart.\n The temperature is currently 2 degrees celsius. How many loops through the cycle do you have to wait?\n",
      "optionNum": 2,
      "option1": "2",
      "option2": "3",
@@ -38,11 +25,7 @@
    },
    {
      "question":
-     "You leave the ship and start to explore the planet. You decide to look at a neighboring valley. The valley is about a 100 meters from your location.\n
-     \tWHILE the distance to the valley is GREATER THAN  zero meters,\n
-     \t\tmove 1 meter closer to the valley.\n
-     \tThen you can start exploring the valley.\n
-     You travel 102 meters. Does this mean you have arrived at the valley?\n",
+     "You leave the ship and start to explore the planet. You decide to look at a neighboring valley. The valley is about a 100 meters from your location.\n\tWHILE the distance to the valley is GREATER THAN zero meters,\n\t\tmove 1 meter closer to the valley.\n\tThen you can start exploring the valley.\n You travel 102 meters. Does this mean you have arrived at the valley?\n",
      "optionNum": 2,
      "option1": "Yes",
      "option2": "No",
@@ -50,11 +33,7 @@
     },
    {
      "question":
-     "You start to explore the valley by gathering samples of vegetation. You will need 3 samples to complete your mission objective.\n
-     \tWHILE sample size is NOT equal to 3,\n
-	   \t\tcollect 1 vegetation sample.\n
-     \tThen you will have completed the task.\n
-     You find one sample. How many more loop cycles will you have to complete?\n",
+     "You start to explore the valley by gathering samples of vegetation. You will need 3 samples to complete your mission objective.\n\tWHILE sample size is NOT equal to 3,\n \t\tcollect 1 vegetation sample.\n\tThen you will have completed the task.\nYou find one sample. How many more loop cycles will you have to complete?\n",
      "optionNum": 2,
      "option1": "2",
      "option2": "3",
@@ -62,35 +41,23 @@
    },
    {
      "question":
-     "It looks like you also need to gather rock samples. You will need at least 4 samples to complete this mission objective.\n
-     \tWHILE sample size is LESS THANS OR EQUAL to 4,\n
-     \t\tcollect 1 rock sample.\n
-     \tThen you will have completed the task.\n
-     You find  2 rock samples. How many more loop cycles will you have to complete?\n",
+     "It looks like you also need to gather rock samples. You will need at least 4 samples to complete this mission objective.\n\tWHILE sample size is LESS THANS OR EQUAL to 4,\n \t\tcollect 1 rock sample.\n\tThen you will have completed the task.\nYou find  2 rock samples. How many more loop cycles will you have to complete?\n",
      "optionNum": 2,
      "option1": "2",
      "option2": "3",
-     "answer": "2",
+     "answer": "2"
    },
    {
      "question":
-     "While exploring the valley, you run into an old friend, space explorer C-137.  He needs your help finding some crystals. He need 5 crystals.\n
-     \tFOR (when you start off zero, repeat until you have the right amount),\n
-     \t\tCollect one crystal.\n
-     \tThen you will have completed your task.\n
-     How many loop cycles must you complete to finish the task?\n",
+     "While exploring the valley, you run into an old friend, space explorer C-137.  He needs your help finding some crystals. He need 5 crystals.\n\tFOR (when you start off zero,repeat until you have the right amount),\n\t\tCollect one crystal.\n\tThen you will have completed your task.\nHow many loop cycles must you complete to finish the task?\n",
      "optionNum": 2,
      "option1": "5",
      "option2": "6",
-     "answer": "5",
+     "answer": "5"
    },
    {
      "question":
-     "C-137 thanks you and heads off. You decide walk back to your ship. It is about 125 meters away.\n
-     \tFOR (when your current distance is 125 from destination, repeat 123 times),\n
-     \t\ttake one step toward the spaceship\n
-     \tThen you will reach you destination.\n
-     According to this loop will you reach your spaceship?\n",
+     "C-137 thanks you and heads off. You decide walk back to your ship. It is about 125 meters away.\n\tFOR (when your current distance is 125 from destination, repeat 123 times),\n \t\ttake one step toward the spaceship\n\tThen you will reach you destination.\nAccording to this loop will you reach your spaceship?\n",
      "optionNum": 2,
      "option1": "Yes",
      "option2": "No",
@@ -98,27 +65,19 @@
    },
    {
      "question":
-     "You reach your spaceship. You decide it is time to return home. You place your destination in the ship’s computer where it will calculate the path. It will take 5 minutes for the computer to finish.\n
-     \tFOR (time is currently at 0 minutes, repeat 5 time),\n
-     \t\twait 1 minute.\n
-     \tThen the computer will be finished.\n
-     According to this loop will the ships computer be finished?\n",
+     "You reach your spaceship. You decide it is time to return home. You place your destination in the ship’s computer where it will calculate the path. It will take 5 minutes for the computer to finish.\n\tFOR (time is currently at 0 minutes, repeat 5 time),\n\t\twait 1 minute.\n\tThen the computer will be finished.\nAccording to this loop will the ships computer be finished?\n",
      "optionNum": 2,
      "option1": "No",
      "option2": "Yes",
-     "answer": "Yes",
+     "answer": "Yes"
    },
    {
      "question":
-     "Before you can liftoff, you have to wait for an opening in the clouds. The computer indicates an opening in 10 minutes. You set a timer.\n
-     \tFOR (timer is at zero, repeat 10 times)\n
-     \t\twait 1 minute.\n
-     \tThen you are ready for liftoff.\n
-     Will this loop complete the timer?\n",
+     "Before you can liftoff, you have to wait for an opening in the clouds. The computer indicates an opening in 10 minutes. You set a timer.\n\tFOR (timer is at zero, repeat 10 times)\n\t\twait 1 minute.\n\tThen you are ready for liftoff.\nWill this loop complete the timer?\n",
      "optionNum": 2,
      "option1": "Yes",
      "option2": "No",
-     "answer": "Yes",
+     "answer": "Yes"
    },
    {
      "question": "Leaving world",
