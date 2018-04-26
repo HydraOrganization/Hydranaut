@@ -92,7 +92,7 @@ function World1()
 
                    else if(correct)
                         goToNextNode();//move player to next node
-                    //SHOW PREVIOUS QUESTION.
+                    //SHOW PREVIOUSQUESTION.
                     else
                     puzzle.initializeQuestion(nodesLocation[playstate][2]);
 
@@ -190,8 +190,12 @@ function World1()
         rocket.visible=false;
         mouseIsPressed=false;
         playstate = 0;
+        me.sceneManager.worldMusic.stop();
         clear();//removes everything from the canvas
         me.sceneManager.showScene(WorldPage);
+        me.sceneManager.worldSelectMusic.play();
+        me.sceneManager.worldSelectMusic.setLoop(true);
+
     }
     //initialize game this is needed if player comes back to game multiple times. it resets the game.
     function initGame(){

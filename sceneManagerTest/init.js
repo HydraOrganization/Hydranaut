@@ -506,6 +506,20 @@ function preload()
     world1Questions = loadJSON("world1Questions.json");
     world2Questions = loadJSON("world2Questions.json");
 
+    //Let's load all the sounds ...shall we?
+    soundFormats('wav', 'mp3');
+
+    //music
+    worldSelectMusic = loadSound('sounds/World-Select.wav');
+    worldMusic = loadSound('sounds/World.wav');
+
+    //sound effects
+    sfxSelectLeft = loadSound('sounds/sfx/menu-select-l.wav');
+    sfxSelectRight = loadSound('sounds/sfx/menu-select-r.wav');
+    sfxCorrect = loadSound('sounds/sfx/successful.mp3');
+    sfxWrong = loadSound('sounds/sfx/wrong-choice.mp3');
+
+
 }
 
 function setup()
@@ -550,6 +564,24 @@ function setup()
 
     //SWITCH TO THE FRONT PAGE
     mgr.showScene(WorldPage);
+
+    //LET'S PLAY SOME MUSIC MY DUDES!
+    worldSelectMusic.setVolume(0.1);
+    worldSelectMusic.play();
+    worldSelectMusic.setLoop(true);
+
+
+    //Now let us allow the rest of the game access the music and sounds
+
+    //music first
+    mgr.worldSelectMusic = worldSelectMusic;
+    mgr.worldMusic = worldMusic;
+
+    //now the sound effects
+    mgr.sfxSelectLeft = sfxSelectLeft;
+    mgr.sfxSelectRight = sfxSelectRight;
+    mgr.sfxCorrect = sfxCorrect;
+    mgr.sfxWrong = sfxWrong;
 }
 
 function windowResized() {

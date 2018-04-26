@@ -16,6 +16,9 @@ function WorldPage()
     var check;
     var me = this;
 
+    //counts the number of ticks for mouse being over
+    //var clock = 1;
+
 
     this.enter = function(){
 
@@ -75,6 +78,7 @@ function WorldPage()
 
       //add background image
       image(this.sceneManager.worldsMap, 0, 0,width,height);//display the worldsMap image
+
       //reset scale and set depth to be on top of over images or sprites
       booleanworld.depth = 1;
       booleanworld.scale= 1;
@@ -97,15 +101,31 @@ function WorldPage()
           booleanworld.scale=1.5;
           if(mouseIsPressed){
               worldSelected("World1");
+              this.sceneManager.worldSelectMusic.stop();
+              this.sceneManager.worldMusic.play();
+              this.sceneManager.worldMusic.setLoop(true);
           }
       }
       if(ifelseworld.mouseIsOver && check == false){
       check =true;
+
           ifelseworld.depth = 3;
           ifelseworld.scale= 1.5;
+        /*  if(clock > 1){
+            this.sceneManager.sfxSelectLeft.stop();
+          }*/
+
           if(mouseIsPressed){
               worldSelected("World2");
+              this.sceneManager.worldSelectMusic.stop();
+              this.sceneManager.worldMusic.play();
+              this.sceneManager.worldMusic.setLoop(true);
           }
+          /*else if (clock == 1){
+            this.sceneManager.sfxSelectLeft.play();
+
+          }
+          clock = 2;*/
       }
       if(forworld.mouseIsOver && check == false){
       check =true;
@@ -113,8 +133,12 @@ function WorldPage()
           forworld.scale = 1.5;
           if(mouseIsPressed){
               worldSelected("World3");
+              this.sceneManager.worldSelectMusic.stop();
+              this.sceneManager.worldMusic.play();
+              this.sceneManager.worldMusic.setLoop(true);
           }
       }
+
     /*  if(whileworld.mouseIsOver && check == false){
       check =true;
           whileworld.depth=3;
