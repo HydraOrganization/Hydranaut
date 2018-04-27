@@ -592,7 +592,7 @@ function setup()
     //sliderBanner.fill(col);
 
     slider = createSlider(0, 1, 0.1, 0.1);
-    slider.position(width/4, height/4);
+    slider.position(500, 15);
     slider.style('width', '300px');
     slider.style('margin', 'auto');
 
