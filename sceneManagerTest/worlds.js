@@ -25,9 +25,9 @@ function WorldPage()
 
     //booleanworld sprite is the planet to be able to enlarge when mouse is active
     //createsprite tell it where to be place
-    booleanworld = createSprite(((width/4)-127),(height/4)+160);
+    booleanworld = createSprite(((width/4)-125),(height/4)+153);
     //add the image to the sprite, normal is just a name given.
-    booleanworld.addAnimation("normal", planet1);
+    booleanworld.addAnimation("normal", planet3);
     //turn on mouse functions of sprite.
     booleanworld.mouseActive=true;//activate booleanworld
 
@@ -43,9 +43,9 @@ function WorldPage()
 
     //forworldsprite is the planet to be able to enlarge when mouse is active
     //createsprite tell it where to be place
-    forworld = createSprite(((width/4)+770),(height/4)+160);
+    forworld = createSprite(((width/4)+765),(height/4)+155);
     //add the image to the sprite, normal is just a name given.
-    forworld.addAnimation("normal", planet3);
+    forworld.addAnimation("normal", planet1);
     forworld.mouseActive=true;//activate hydra mouse click
 
     //whileworld sprite is the planet to be able to enlarge when mouse is active
@@ -79,6 +79,16 @@ function WorldPage()
       //add background image
       image(this.sceneManager.worldsMap, 0, 0,width,height);//display the worldsMap image
 
+      //slider import
+      //var volume = this.sceneManager.worldSelectMusic.setVolume();
+      var val = slider.value();
+      this.sceneManager.worldSelectMusic.setVolume(val);
+
+      /*var mute = muteButton.value();
+      muteButton.mousePressed(toggleMusic);*/
+
+
+
       //reset scale and set depth to be on top of over images or sprites
       booleanworld.depth = 1;
       booleanworld.scale= 1;
@@ -104,6 +114,7 @@ function WorldPage()
               this.sceneManager.worldSelectMusic.stop();
               this.sceneManager.worldMusic.play();
               this.sceneManager.worldMusic.setLoop(true);
+              this.sceneManager.worldMusic.setVolume(val);
           }
       }
       if(ifelseworld.mouseIsOver && check == false){
@@ -120,6 +131,7 @@ function WorldPage()
               this.sceneManager.worldSelectMusic.stop();
               this.sceneManager.worldMusic.play();
               this.sceneManager.worldMusic.setLoop(true);
+              this.sceneManager.worldMusic.setVolume(val);
           }
           /*else if (clock == 1){
             this.sceneManager.sfxSelectLeft.play();
@@ -136,6 +148,7 @@ function WorldPage()
               this.sceneManager.worldSelectMusic.stop();
               this.sceneManager.worldMusic.play();
               this.sceneManager.worldMusic.setLoop(true);
+              this.sceneManager.worldMusic.setVolume(val);
           }
       }
 

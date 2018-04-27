@@ -15,6 +15,8 @@ var p1;
 var spaceShadows;
 var diamonds;
 var button, fontRegular;
+var slider;
+var sliderBanner;
 var R1,R2,R3;
 
 
@@ -569,7 +571,7 @@ function setup()
     mgr.showScene(WorldPage);
 
     //LET'S PLAY SOME MUSIC MY DUDES!
-    worldSelectMusic.setVolume(0.1);
+    worldSelectMusic.setVolume(0.001);
     worldSelectMusic.play();
     worldSelectMusic.setLoop(true);
 
@@ -585,6 +587,21 @@ function setup()
     mgr.sfxSelectRight = sfxSelectRight;
     mgr.sfxCorrect = sfxCorrect;
     mgr.sfxWrong = sfxWrong;
+
+
+    //sliderBanner.fill(col);
+
+    slider = createSlider(0, 1, 0.1, 0.1);
+    slider.position(width/4, height/4);
+    slider.style('width', '300px');
+    slider.style('margin', 'auto');
+
+
+  /*  //create slider for volume
+    var col = color(65);
+    fill(col);
+    sliderBanner = rect(width/4, height/4, 500, 500);*/
+
 }
 
 function windowResized() {

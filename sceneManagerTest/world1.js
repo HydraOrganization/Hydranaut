@@ -35,6 +35,9 @@ function World1()
         clear();
         image(wm, 0, 0, width, height);
 
+        var val = slider.value();
+        this.sceneManager.worldMusic.setVolume(val);
+
         incorrect = false;
         //check to see if sprite is at node
         checkoverlap();
