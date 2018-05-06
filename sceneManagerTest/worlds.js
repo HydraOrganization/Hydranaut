@@ -7,7 +7,7 @@ var shadow;
 var space;
 var choice;
 
-//var button;
+
 
 //WORLD1 FUNCTION
 function WorldPage()
@@ -18,11 +18,15 @@ function WorldPage()
 
     //counts the number of ticks for mouse being over
     //var clock = 1;
+    stroke(2);
+    fill(255, 104, 204);
+    textSize(24);
+
+
+
 
 
     this.enter = function(){
-
-
     //booleanworld sprite is the planet to be able to enlarge when mouse is active
     //createsprite tell it where to be place
     booleanworld = createSprite(((width/4)-125),(height/4)+153);
@@ -48,13 +52,6 @@ function WorldPage()
     forworld.addAnimation("normal", planet1);
     forworld.mouseActive=true;//activate hydra mouse click
 
-    //whileworld sprite is the planet to be able to enlarge when mouse is active
-    //createsprite tell it where to be place
-  //  whileworld = createSprite(((width/4)+560),(height/4)+350);
-    //add the image to the sprite, normal is just a name given.
-  //  whileworld.addAnimation("normal", planet4);
-  //  whileworld.mouseActive=true;//activate hydra mouse click
-
 
     //shadow image of planets.
     shadow=createSprite(width/2,height/2);
@@ -63,18 +60,14 @@ function WorldPage()
         booleanworld.visible = true;
         ifelseworld.visible = true;
         forworld.visible = true;
-        //whileworld.visible = true;
+
 
     }
 
 
   this.draw = function()
   {
-
-
       check = false;
-      //make sprites visible
-
 
       //add background image
       image(this.sceneManager.worldsMap, 0, 0,width,height);//display the worldsMap image
@@ -86,8 +79,6 @@ function WorldPage()
 
       /*var mute = muteButton.value();
       muteButton.mousePressed(toggleMusic);*/
-
-
 
       //reset scale and set depth to be on top of over images or sprites
       booleanworld.depth = 1;
@@ -152,18 +143,14 @@ function WorldPage()
           }
       }
 
-    /*  if(whileworld.mouseIsOver && check == false){
-      check =true;
-          whileworld.depth=3;
-          whileworld.scale=1.25;
-          if(mouseIsPressed){
-              worldSelected("World2");
-          }
-      }*/
-
-
-      //drawsprites
       drawSprites();
+
+
+
+
+      text("BOOLEAN WORLD",(width/4)-240,(height/4)+175);
+      text("IF/ELSE WORLD",(width/2)-100,(height/4)+175);
+      text("LOOPS WORLD",(width/2)+350,(height/4)+175);
 
   }
   function worldSelected(choice){

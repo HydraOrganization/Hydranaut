@@ -37,8 +37,13 @@ function World1()
 
         var val = slider.value();
         this.sceneManager.worldMusic.setVolume(val);
+        if(nodesLocation[playstate][2]==10){
+            console.log("MOVING ROCKET MOVING ROCKET MOVING ROCKET");
+            moveRocket();
+            //endGame();
+        }
 
-        incorrect = false;
+        //incorrect = false;
         //check to see if sprite is at node
         checkoverlap();
         //check to see if mouse over button
@@ -86,7 +91,9 @@ function World1()
                 //CHECK TO SEE IF ITS A TUTORIAL ONLY ONE BUTTON = NEXT
                 if(1 == puzzle.buttonArray.length){
                    // if player has finished
-                    if(playstate == 14 ){
+                   // if(playstate == 14  ){
+                    console.log("STATE = "+nodesLocation[playstate][2]);
+                    if(nodesLocation[playstate][2]==10){
                         console.log("MOVING ROCKET MOVING ROCKET MOVING ROCKET");
                         moveRocket();
                         //endGame();
@@ -146,7 +153,8 @@ function World1()
         {
             player.setVelocity(0, 0);
             //puzzle.depth = -2;
-            if(playstate==15)
+           // console.log("STATE = "+nodesLocation[playstate][2]);
+            if(nodesLocation[playstate][2]==10)
                 puzzle.visible = false;
             else
             puzzle.visible = true;//show next puzzle
@@ -202,39 +210,22 @@ function World1()
     }
     //initialize game this is needed if player comes back to game multiple times. it resets the game.
     function initGame(){
-        // nodesLocation = [
-        //     [200,410,20],
-        //     [200,410,21],
-        //     [250,330,1],
-        //     [290,229,2],
-        //     [338,137,3],
-        //     [579,263,22],
-        //     [599,155,4],
-        //     [579,263,5],
-        //     [570,395,6],
-        //     [905,375,23],
-        //     [905,375,7],
-        //     [860,225,8],
-        //     [837,130,9],
-        //     [960,130,10]
-        // ];
         nodesLocation = [
             [200,410,20],
             [200,410,21],
             [250,330,1],
-            [290,229,22],
             [290,229,2],
             [338,137,3],
             [599,155,4],
             [579,263,23],
             [579,263,5],
             [570,395,6],
-            [905,375,24],
             [905,375,7],
             [860,225,8],
             [837,130,9],
             [960,130,10]
         ];
+
        // world = me.sceneArgs;
        // console.log(world);
 
@@ -253,7 +244,23 @@ function World1()
         }
         else{
             console.log("wrold1 was selected");
-            //rocket.addAnimation("rocket3", R1);
+            nodesLocation = [
+                [200,410,20],
+                [200,410,21],
+                [250,330,1],
+                [290,229,22],
+                [290,229,2],
+                [338,137,3],
+                [599,155,4],
+                [579,263,23],
+                [579,263,5],
+                [570,395,6],
+                [905,375,24],
+                [905,375,7],
+                [860,225,8],
+                [837,130,9],
+                [960,130,10]
+            ];
             puzzle = new Puzzle(world1Questions);
             wm = me.sceneManager.worldMap1;
         }
@@ -293,7 +300,7 @@ function World1()
         //puzzle = new Puzzle(world1Questions);//gives the puzzle class the set of world questions
         var buttonArray = [];
 
-        console.log("init "+nodesLocation[playstate][2]);
+        //console.log("init "+nodesLocation[playstate][2]);
         xpos=nodesLocation[playstate][0];
         ypos=nodesLocation[playstate][1];
         puzzle.initializeQuestion(nodesLocation[playstate][2]);
